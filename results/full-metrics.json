@@ -1,0 +1,3555 @@
+{
+  "schema_version": 1,
+  "benchmark": "H00852.SH",
+  "sessions_per_year": 252,
+  "currency": "CNY",
+  "definitions": {
+    "nav": "Daily net-of-fee wealth normalized to 1 at the opening close.",
+    "annual_active": "Mean of daily strategy-minus-benchmark returns, multiplied by 252.",
+    "annualized_relative_return": "Closing strategy-to-benchmark wealth ratio, relative to the opening ratio, compounded to 252 sessions.",
+    "tracking_error": "Sample standard deviation of daily return differences times the square root of 252.",
+    "drawdown": "Minimum wealth divided by the running peak minus 1, including the opening close in the peak.",
+    "turnover": "Executed buy plus sell notional divided by twice the prior close strategy NAV.",
+    "daily_nav_bps": "Mean daily amount divided by prior close strategy NAV, in basis points.",
+    "cumulative_cost_nav_bps": "Sum of daily charged cost divided by prior close strategy NAV, in basis points.",
+    "writeoff_cny": "Sum of valuation losses from marking prolonged unpriced positions to zero.",
+    "os": "Final-year diagnostic on carried positions and cash, with return statistics measured from the preceding close.",
+    "calendar_periods": "Calendar years and half-years clipped to the covered trading dates."
+  },
+  "interval": {
+    "method": "Moving-block bootstrap percentile interval on daily paired differences",
+    "confidence_level": 0.95,
+    "block_sessions": 20,
+    "resamples": 2000,
+    "seed": 3188
+  },
+  "execution": {
+    "nominal": {
+      "initial_cash": 10000000,
+      "buy_bps": 5,
+      "sell_bps": 12,
+      "adv_fraction": 0.01
+    },
+    "passive": {
+      "initial_cash": 10000000,
+      "buy_bps": 5,
+      "sell_bps": 12,
+      "adv_fraction": 0.01
+    },
+    "sector_cost": {
+      "initial_cash": 10000000,
+      "buy_bps": 5,
+      "sell_bps": 12,
+      "adv_fraction": 0.01
+    },
+    "double_fees": {
+      "initial_cash": 10000000,
+      "buy_bps": 10,
+      "sell_bps": 24,
+      "adv_fraction": 0.01
+    },
+    "capacity": {
+      "initial_cash": 300000000,
+      "buy_bps": 5,
+      "sell_bps": 12,
+      "adv_fraction": 0.0025
+    }
+  },
+  "nominal_phases": {
+    "replica": {
+      "first_trade": "2019-07-01",
+      "last_trade": "2019-10-09",
+      "days": 67
+    },
+    "rolling": {
+      "first_trade": "2019-10-10",
+      "last_trade": "2024-06-28",
+      "days": 1146
+    }
+  },
+  "periods": {
+    "full": {
+      "opening_close": "2019-06-28",
+      "first_trade": "2019-07-01",
+      "last_trade": "2024-06-28",
+      "days": 1213,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": 0.35736943100375496,
+          "benchmark_cumulative_return": -0.0313083315711119,
+          "cumulative_return_difference": 0.38867776257486686,
+          "cumulative_relative_return": 0.401239914869155,
+          "annualized_strategy_return": 0.06553554248667837,
+          "annualized_benchmark_return": -0.006586495404692472,
+          "annualized_relative_return": 0.07260021889953228,
+          "annual_active": 0.06814658854122801,
+          "tracking_error": 0.030855471556579656,
+          "information_ratio": 2.2085738802036348,
+          "strategy_max_drawdown": -0.3492436109990862,
+          "benchmark_max_drawdown": -0.45583425711421766,
+          "relative_max_drawdown": -0.03427132356839069,
+          "annual_active_95pct": [
+            0.042152592271886946,
+            0.10161590153010108
+          ],
+          "mean_one_way_turnover": 0.015414178170405208,
+          "cost_cny": 441419.85955740424,
+          "cost_daily_nav_bps": 0.25924642714432183,
+          "cumulative_cost_nav_bps": 314.4659161260624,
+          "writeoff_cny": 14768.095941584499,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 1.4363887522692709e-18,
+          "blocked_value_daily_nav_bps": 39.59518735122058,
+          "cash_cut_value_daily_nav_bps": 38.427635549914385,
+          "max_close_sector_gap_vs_decision": 0.005739700770413265,
+          "mean_close_active_share": 0.3807063351199366,
+          "max_close_cash_fraction": 0.001899575470292336,
+          "max_target_sector_gap": 0.0005777470666766918,
+          "max_target_capacity_excess": 0.0,
+          "max_target_name_bound_gap": 0.0022781664953408017,
+          "max_target_cash_fraction": 5.551115123125783e-15
+        },
+        "passive": {
+          "strategy_cumulative_return": -0.05230556633843875,
+          "benchmark_cumulative_return": -0.0313083315711119,
+          "cumulative_return_difference": -0.020997234767326844,
+          "cumulative_relative_return": -0.02167587009536487,
+          "annualized_strategy_return": -0.011098900090858899,
+          "annualized_benchmark_return": -0.006586495404692472,
+          "annualized_relative_return": -0.004542322673582566,
+          "annual_active": -0.0047017850126525405,
+          "tracking_error": 0.009425518187108588,
+          "information_ratio": -0.49883570529663157,
+          "strategy_max_drawdown": -0.45411938775762617,
+          "benchmark_max_drawdown": -0.45583425711421766,
+          "relative_max_drawdown": -0.027213912750095992,
+          "annual_active_95pct": [
+            -0.005299074300752413,
+            0.002877784769401077
+          ],
+          "mean_one_way_turnover": 0.011588760648373412,
+          "cost_cny": 282649.2441484332,
+          "cost_daily_nav_bps": 0.19419155269456173,
+          "cumulative_cost_nav_bps": 235.55435341850338,
+          "writeoff_cny": 25593.219531932264,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 1.7734422309445332,
+          "blocked_value_daily_nav_bps": 70.21149580549358,
+          "cash_cut_value_daily_nav_bps": 70.99944694397051
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": 0.2957073885843995,
+          "benchmark_cumulative_return": -0.0313083315711119,
+          "cumulative_return_difference": 0.3270157201555114,
+          "cumulative_relative_return": 0.33758494143538487,
+          "annualized_strategy_return": 0.05529345892572057,
+          "annualized_benchmark_return": -0.006586495404692472,
+          "annualized_relative_return": 0.06229022863507505,
+          "annual_active": 0.05880156693222917,
+          "tracking_error": 0.029573065722192204,
+          "information_ratio": 1.9883487050212494,
+          "strategy_max_drawdown": -0.3638109572465237,
+          "benchmark_max_drawdown": -0.45583425711421766,
+          "relative_max_drawdown": -0.04007570345053957,
+          "annual_active_95pct": [
+            0.03419340958181012,
+            0.09135440717212
+          ],
+          "mean_one_way_turnover": 0.014613983316185264,
+          "cost_cny": 409344.8251846256,
+          "cost_daily_nav_bps": 0.245638313376519,
+          "cumulative_cost_nav_bps": 297.95927412571757,
+          "writeoff_cny": 16817.063335003077,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 0.9003504917293756,
+          "blocked_value_daily_nav_bps": 42.92688842770293,
+          "cash_cut_value_daily_nav_bps": 42.533435267423485,
+          "max_close_sector_gap_vs_decision": 0.00574967581118192,
+          "mean_close_active_share": 0.36398297489035963,
+          "max_close_cash_fraction": 0.0013255437033731726
+        },
+        "double_fees": {
+          "strategy_cumulative_return": 0.31543085443283925,
+          "benchmark_cumulative_return": -0.0313083315711119,
+          "cumulative_return_difference": 0.34673918600395115,
+          "cumulative_relative_return": 0.35794587411526324,
+          "annualized_strategy_return": 0.05861077091315803,
+          "annualized_benchmark_return": -0.006586495404692472,
+          "annualized_relative_return": 0.06562953494819879,
+          "annual_active": 0.06161917100332607,
+          "tracking_error": 0.030928866146200884,
+          "information_ratio": 1.992286775468974,
+          "strategy_max_drawdown": -0.3561576463702739,
+          "benchmark_max_drawdown": -0.45583425711421766,
+          "relative_max_drawdown": -0.03636073561767417,
+          "annual_active_95pct": [
+            0.0357316025290189,
+            0.09536443482007717
+          ],
+          "mean_one_way_turnover": 0.015405181124605098,
+          "cost_cny": 867777.6036160777,
+          "cost_daily_nav_bps": 0.518368332603224,
+          "cumulative_cost_nav_bps": 628.7807874477107,
+          "writeoff_cny": 14448.013130088271,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 2.8175733162775083e-19,
+          "blocked_value_daily_nav_bps": 39.83210900133669,
+          "cash_cut_value_daily_nav_bps": 38.9143978546787,
+          "max_target_sector_gap": 0.0005785096699913868,
+          "max_target_capacity_excess": 0.0,
+          "max_target_name_bound_gap": 0.0022782877265479797,
+          "max_target_cash_fraction": 5.551115123125783e-15
+        },
+        "capacity": {
+          "strategy_cumulative_return": 0.34709856334849265,
+          "benchmark_cumulative_return": -0.0313083315711119,
+          "cumulative_return_difference": 0.37840689491960455,
+          "cumulative_relative_return": 0.39063709047207884,
+          "annualized_strategy_return": 0.06385549156273562,
+          "annualized_benchmark_return": -0.006586495404692472,
+          "annualized_relative_return": 0.07090902896082985,
+          "annual_active": 0.06671032615679795,
+          "tracking_error": 0.030823067354010105,
+          "information_ratio": 2.164298750368168,
+          "strategy_max_drawdown": -0.3504475647265405,
+          "benchmark_max_drawdown": -0.45583425711421766,
+          "relative_max_drawdown": -0.03134499494708498,
+          "annual_active_95pct": [
+            0.04265753373825744,
+            0.10037038688155914
+          ],
+          "mean_one_way_turnover": 0.01460132773293428,
+          "cost_cny": 12533633.420194935,
+          "cost_daily_nav_bps": 0.24542891916006196,
+          "cumulative_cost_nav_bps": 297.70527894115514,
+          "writeoff_cny": 443725.0102675168,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 5.211311122244664,
+          "blocked_value_daily_nav_bps": 19.49574123023989,
+          "cash_cut_value_daily_nav_bps": 18.814896969507345,
+          "max_close_sector_gap_vs_decision": 0.05583440070594483,
+          "mean_close_active_share": 0.37194396351300885,
+          "max_close_cash_fraction": 0.3731865625053249,
+          "max_target_sector_gap": 0.0032615617040518807,
+          "max_target_capacity_excess": 0.0,
+          "max_target_name_bound_gap": 0.013429111515758674,
+          "max_target_cash_fraction": 2.4424906541753444e-15
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.07284837355388143,
+          "annual_active_difference_95pct": [
+            0.04378303702395089,
+            0.10409036791310218
+          ],
+          "cumulative_relative_return": 0.4322859592615229
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.009345021608999426,
+          "annual_active_difference_95pct": [
+            0.00526410569092453,
+            0.013626621908144624
+          ],
+          "cumulative_relative_return": 0.047589481207422235
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.006527417537902739,
+          "annual_active_difference_95pct": [
+            -0.007125450513348075,
+            -0.005808400447535628
+          ],
+          "cumulative_relative_return": -0.030896950832245196
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": -0.0014362623844307422,
+          "annual_active_difference_95pct": [
+            -0.002894747942547286,
+            0.0016099178131634944
+          ],
+          "cumulative_relative_return": -0.007566744484342136
+        }
+      }
+    },
+    "is": {
+      "opening_close": "2019-06-28",
+      "first_trade": "2019-07-01",
+      "last_trade": "2023-06-30",
+      "days": 972,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": 0.6784335843916021,
+          "benchmark_cumulative_return": 0.2894228893704822,
+          "cumulative_return_difference": 0.38901069502111985,
+          "cumulative_relative_return": 0.3016936477768293,
+          "annualized_strategy_return": 0.143690427518669,
+          "annualized_benchmark_return": 0.06812240081484089,
+          "annualized_relative_return": 0.07074847100498904,
+          "annual_active": 0.06664013737737604,
+          "tracking_error": 0.03170686308452908,
+          "information_ratio": 2.101757502775232,
+          "strategy_max_drawdown": -0.33122084872637714,
+          "benchmark_max_drawdown": -0.34604948146574754,
+          "relative_max_drawdown": -0.03427132356839069,
+          "annual_active_95pct": [
+            0.03845838204454306,
+            0.10598831033070089
+          ],
+          "mean_one_way_turnover": 0.017186069580734802,
+          "cost_cny": 389333.22169599374,
+          "cost_daily_nav_bps": 0.28866350982323796,
+          "cumulative_cost_nav_bps": 280.5809315481873,
+          "writeoff_cny": 4459.189598222252,
+          "max_stale_closes": 701,
+          "capacity_cut_value_daily_nav_bps": 1.7925304079245122e-18,
+          "blocked_value_daily_nav_bps": 41.67571663748239,
+          "cash_cut_value_daily_nav_bps": 40.77728972071432
+        },
+        "passive": {
+          "strategy_cumulative_return": 0.26980389862289256,
+          "benchmark_cumulative_return": 0.2894228893704822,
+          "cumulative_return_difference": -0.01961899074758966,
+          "cumulative_relative_return": -0.015215326879428948,
+          "annualized_strategy_return": 0.06388500717443812,
+          "annualized_benchmark_return": 0.06812240081484089,
+          "annualized_relative_return": -0.003967142377287569,
+          "annual_active": -0.004189744247849031,
+          "tracking_error": 0.010380200871098304,
+          "information_ratio": -0.4036284364702977,
+          "strategy_max_drawdown": -0.34359167076497565,
+          "benchmark_max_drawdown": -0.34604948146574754,
+          "relative_max_drawdown": -0.027213912750095992,
+          "annual_active_95pct": [
+            -0.004676937403028932,
+            0.004710802800297064
+          ],
+          "mean_one_way_turnover": 0.012076721696121498,
+          "cost_cny": 239428.90807124335,
+          "cost_daily_nav_bps": 0.20177414499540933,
+          "cumulative_cost_nav_bps": 196.12446893553786,
+          "writeoff_cny": 13326.28547284513,
+          "max_stale_closes": 701,
+          "capacity_cut_value_daily_nav_bps": 1.4060593086511857,
+          "blocked_value_daily_nav_bps": 76.45983897727771,
+          "cash_cut_value_daily_nav_bps": 76.87768631324235
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": 0.613758113996719,
+          "benchmark_cumulative_return": 0.2894228893704822,
+          "cumulative_return_difference": 0.32433522462623676,
+          "cumulative_relative_return": 0.251535184693815,
+          "annualized_strategy_return": 0.13209804317431395,
+          "annualized_benchmark_return": 0.06812240081484089,
+          "annualized_relative_return": 0.05989542238854639,
+          "annual_active": 0.05677947330433251,
+          "tracking_error": 0.030550670665011017,
+          "information_ratio": 1.8585344304523153,
+          "strategy_max_drawdown": -0.33806443617505355,
+          "benchmark_max_drawdown": -0.34604948146574754,
+          "relative_max_drawdown": -0.04007570345053957,
+          "annual_active_95pct": [
+            0.030274274842391067,
+            0.09450221228344921
+          ],
+          "mean_one_way_turnover": 0.016291141446397112,
+          "cost_cny": 361998.25676909136,
+          "cost_daily_nav_bps": 0.27344433946907426,
+          "cumulative_cost_nav_bps": 265.78789796394017,
+          "writeoff_cny": 5253.530035250193,
+          "max_stale_closes": 701,
+          "capacity_cut_value_daily_nav_bps": 0.5617965144674489,
+          "blocked_value_daily_nav_bps": 45.03123379095031,
+          "cash_cut_value_daily_nav_bps": 44.546523471814496
+        },
+        "double_fees": {
+          "strategy_cumulative_return": 0.6321017604454511,
+          "benchmark_cumulative_return": 0.2894228893704822,
+          "cumulative_return_difference": 0.34267887107496886,
+          "cumulative_relative_return": 0.26576143009394726,
+          "annualized_strategy_return": 0.13542039269521444,
+          "annualized_benchmark_return": 0.06812240081484089,
+          "annualized_relative_return": 0.06300588006490071,
+          "annual_active": 0.05937304823960065,
+          "tracking_error": 0.03179181187076633,
+          "information_ratio": 1.8675578630419682,
+          "strategy_max_drawdown": -0.33267695738065806,
+          "benchmark_max_drawdown": -0.34604948146574754,
+          "relative_max_drawdown": -0.03636073561767417,
+          "annual_active_95pct": [
+            0.03125868114150288,
+            0.09895625914739244
+          ],
+          "mean_one_way_turnover": 0.017176361645916502,
+          "cost_cny": 766684.0645690896,
+          "cost_daily_nav_bps": 0.5771989133923685,
+          "cumulative_cost_nav_bps": 561.0373438173822,
+          "writeoff_cny": 4419.251218700468,
+          "max_stale_closes": 701,
+          "capacity_cut_value_daily_nav_bps": 3.516169169387466e-19,
+          "blocked_value_daily_nav_bps": 41.941014671127604,
+          "cash_cut_value_daily_nav_bps": 41.320602564996435
+        },
+        "capacity": {
+          "strategy_cumulative_return": 0.6685056423346643,
+          "benchmark_cumulative_return": 0.2894228893704822,
+          "cumulative_return_difference": 0.37908275296418203,
+          "cumulative_relative_return": 0.2939941241071473,
+          "annualized_strategy_return": 0.14193270023820137,
+          "annualized_benchmark_return": 0.06812240081484089,
+          "annualized_relative_return": 0.06910284754542428,
+          "annual_active": 0.06523257757763942,
+          "tracking_error": 0.0318001838806612,
+          "information_ratio": 2.051327055920253,
+          "strategy_max_drawdown": -0.33149292183258716,
+          "benchmark_max_drawdown": -0.34604948146574754,
+          "relative_max_drawdown": -0.03134499494708498,
+          "annual_active_95pct": [
+            0.03818769420151471,
+            0.10532590731685355
+          ],
+          "mean_one_way_turnover": 0.01617037410494132,
+          "cost_cny": 10981569.27357584,
+          "cost_daily_nav_bps": 0.27139783163323494,
+          "cumulative_cost_nav_bps": 263.79869234750436,
+          "writeoff_cny": 136327.20031158032,
+          "max_stale_closes": 701,
+          "capacity_cut_value_daily_nav_bps": 6.503416040414378,
+          "blocked_value_daily_nav_bps": 20.275459220504523,
+          "cash_cut_value_daily_nav_bps": 19.56092060300588
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.07082988162522622,
+          "annual_active_difference_95pct": [
+            0.03894789061602331,
+            0.10479663316613655
+          ],
+          "cumulative_relative_return": 0.32180534822098905
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.009860664073043928,
+          "annual_active_difference_95pct": [
+            0.005254111487326665,
+            0.014681996654016231
+          ],
+          "cumulative_relative_return": 0.040077549314193384
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.007267089137776246,
+          "annual_active_difference_95pct": [
+            -0.00787348478724175,
+            -0.006539702605050347
+          ],
+          "cumulative_relative_return": -0.027604204525581655
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": -0.0014075597997369829,
+          "annual_active_difference_95pct": [
+            -0.003062409012151584,
+            0.002119315389923754
+          ],
+          "cumulative_relative_return": -0.00591500441200743
+        }
+      }
+    },
+    "os": {
+      "opening_close": "2023-06-30",
+      "first_trade": "2023-07-03",
+      "last_trade": "2024-06-28",
+      "days": 241,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": -0.19128797014880172,
+          "benchmark_cumulative_return": -0.2487401329583815,
+          "cumulative_return_difference": 0.057452162809579765,
+          "cumulative_relative_return": 0.0764744202772607,
+          "annualized_strategy_return": -0.19908703052840404,
+          "annualized_benchmark_return": -0.2584834277117769,
+          "annualized_relative_return": 0.08010124035405353,
+          "annual_active": 0.07422239987427756,
+          "tracking_error": 0.027209226159841688,
+          "information_ratio": 2.727839426165783,
+          "strategy_max_drawdown": -0.31903003121711504,
+          "benchmark_max_drawdown": -0.3515841242908765,
+          "relative_max_drawdown": -0.017040843419037555,
+          "annual_active_95pct": [
+            0.010281424022715481,
+            0.1231859712601741
+          ],
+          "mean_one_way_turnover": 0.008267794556959699,
+          "cost_cny": 52086.63786141052,
+          "cost_daily_nav_bps": 0.14060159575881762,
+          "cumulative_cost_nav_bps": 33.884984577875045,
+          "writeoff_cny": 10308.906343362245,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 31.2040069933514,
+          "cash_cut_value_daily_nav_bps": 28.951022047766944
+        },
+        "passive": {
+          "strategy_cumulative_return": -0.25366866908399033,
+          "benchmark_cumulative_return": -0.2487401329583815,
+          "cumulative_return_difference": -0.00492853612560884,
+          "cumulative_relative_return": -0.006560361256906844,
+          "annualized_strategy_return": -0.26356931758902147,
+          "annualized_benchmark_return": -0.2584834277117769,
+          "annualized_relative_return": -0.006858767649049469,
+          "annual_active": -0.006766945275675974,
+          "tracking_error": 0.0035623054519589147,
+          "information_ratio": -1.8995971476715523,
+          "strategy_max_drawdown": -0.35399479256334765,
+          "benchmark_max_drawdown": -0.3515841242908765,
+          "relative_max_drawdown": -0.00790355061226844,
+          "annual_active_95pct": [
+            -0.012421681171802947,
+            0.00021553104644021415
+          ],
+          "mean_one_way_turnover": 0.009620718580277398,
+          "cost_cny": 43220.33607718986,
+          "cost_daily_nav_bps": 0.16360947918242957,
+          "cumulative_cost_nav_bps": 39.42988448296553,
+          "writeoff_cny": 12266.934059087134,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 3.255169203845504,
+          "blocked_value_daily_nav_bps": 45.01070923713604,
+          "cash_cut_value_daily_nav_bps": 47.29136118906502
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": -0.1970869876059791,
+          "benchmark_cumulative_return": -0.2487401329583815,
+          "cumulative_return_difference": 0.051653145352402396,
+          "cumulative_relative_return": 0.06875536364774404,
+          "annualized_strategy_return": -0.20509127128432436,
+          "annualized_benchmark_return": -0.2584834277117769,
+          "annualized_relative_return": 0.07200399616517172,
+          "annual_active": 0.06695706488374878,
+          "tracking_error": 0.025299732925276368,
+          "information_ratio": 2.646552241539813,
+          "strategy_max_drawdown": -0.32037381807527254,
+          "benchmark_max_drawdown": -0.3515841242908765,
+          "relative_max_drawdown": -0.016012794380158457,
+          "annual_active_95pct": [
+            0.008756222702647318,
+            0.11121762106020208
+          ],
+          "mean_one_way_turnover": 0.007849677496409682,
+          "cost_cny": 47346.56841553417,
+          "cost_daily_nav_bps": 0.1334911873932673,
+          "cumulative_cost_nav_bps": 32.17137616177742,
+          "writeoff_cny": 11563.533299752886,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 2.2658047070762333,
+          "blocked_value_daily_nav_bps": 34.439653186721785,
+          "cash_cut_value_daily_nav_bps": 34.4142579451494
+        },
+        "double_fees": {
+          "strategy_cumulative_return": -0.19402644717825834,
+          "benchmark_cumulative_return": -0.2487401329583815,
+          "cumulative_return_difference": 0.054713685780123145,
+          "cumulative_relative_return": 0.07282924082658626,
+          "annualized_strategy_return": -0.201922666155819,
+          "annualized_benchmark_return": -0.2584834277117769,
+          "annualized_relative_return": 0.0762771375175324,
+          "annual_active": 0.07067822214997067,
+          "tracking_error": 0.027224871019235798,
+          "information_ratio": 2.5960902477750145,
+          "strategy_max_drawdown": -0.32020620667505895,
+          "benchmark_max_drawdown": -0.3515841242908765,
+          "relative_max_drawdown": -0.017308049292712235,
+          "annual_active_95pct": [
+            0.006662334477262293,
+            0.11972844172304194
+          ],
+          "mean_one_way_turnover": 0.008261664665208059,
+          "cost_cny": 101093.53904698821,
+          "cost_daily_nav_bps": 0.2810931270967991,
+          "cumulative_cost_nav_bps": 67.74344363032858,
+          "writeoff_cny": 10028.761911387805,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 31.326481154711075,
+          "cash_cut_value_daily_nav_bps": 29.20970499812748
+        },
+        "capacity": {
+          "strategy_cumulative_return": -0.19263170038576627,
+          "benchmark_cumulative_return": -0.2487401329583815,
+          "cumulative_return_difference": 0.05610843257261522,
+          "cumulative_relative_return": 0.07468578455224062,
+          "annualized_strategy_return": -0.20047848991159478,
+          "annualized_benchmark_return": -0.2584834277117769,
+          "annualized_relative_return": 0.07822473558640297,
+          "annual_active": 0.07267037436817878,
+          "tracking_error": 0.026575891707186074,
+          "information_ratio": 2.7344472640415236,
+          "strategy_max_drawdown": -0.3202436328080265,
+          "benchmark_max_drawdown": -0.3515841242908765,
+          "relative_max_drawdown": -0.01581205564087218,
+          "annual_active_95pct": [
+            0.010270802855629792,
+            0.11988463209556174
+          ],
+          "mean_one_way_turnover": 0.008273057718034528,
+          "cost_cny": 1552064.146619095,
+          "cost_daily_nav_bps": 0.14069123067904848,
+          "cumulative_cost_nav_bps": 33.90658659365069,
+          "writeoff_cny": 307397.80995593645,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 4.0068733181548044e-15,
+          "blocked_value_daily_nav_bps": 16.350986514317796,
+          "cash_cut_value_daily_nav_bps": 15.80603816552153
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.08098934514995143,
+          "annual_active_difference_95pct": [
+            0.016457687202387942,
+            0.1295674964757142
+          ],
+          "cumulative_relative_return": 0.08358311697651177
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.00726533499052948,
+          "annual_active_difference_95pct": [
+            0.00048827204432227213,
+            0.013464324132276282
+          ],
+          "cumulative_relative_return": 0.007222472880202169
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.003544177724305028,
+          "annual_active_difference_95pct": [
+            -0.0040033268023192525,
+            -0.003032823001009906
+          ],
+          "cumulative_relative_return": -0.003386220222247105
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": -0.0015520255061001777,
+          "annual_active_difference_95pct": [
+            -0.005301324501311466,
+            0.0012085077718571894
+          ],
+          "cumulative_relative_return": -0.0016615682558992484
+        }
+      }
+    }
+  },
+  "annual": {
+    "2019": {
+      "opening_close": "2019-06-28",
+      "first_trade": "2019-07-01",
+      "last_trade": "2019-12-31",
+      "days": 126,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": 0.04783857182869844,
+          "benchmark_cumulative_return": 0.0489466789500419,
+          "cumulative_return_difference": -0.0011081071213434601,
+          "cumulative_relative_return": -0.0010563998567140187,
+          "annualized_strategy_return": 0.0979656726120064,
+          "annualized_benchmark_return": 0.10028913528032235,
+          "annualized_relative_return": -0.0021116837327708193,
+          "annual_active": -0.003995004946963698,
+          "tracking_error": 0.033275458622162496,
+          "information_ratio": -0.12005859911132524,
+          "strategy_max_drawdown": -0.11067902270925212,
+          "benchmark_max_drawdown": -0.11020534603857646,
+          "relative_max_drawdown": -0.01992101493341747,
+          "annual_active_95pct": [
+            -0.023577463989302428,
+            0.10548928718484422
+          ],
+          "mean_one_way_turnover": 0.02460285558424721,
+          "cost_cny": 48809.23516136295,
+          "cost_daily_nav_bps": 0.39060814917493364,
+          "cumulative_cost_nav_bps": 49.21662679604164,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 6.207913562173729,
+          "cash_cut_value_daily_nav_bps": 6.490067906866299
+        },
+        "passive": {
+          "strategy_cumulative_return": 0.027411782868297374,
+          "benchmark_cumulative_return": 0.0489466789500419,
+          "cumulative_return_difference": -0.021534896081744526,
+          "cumulative_relative_return": -0.02053001979404734,
+          "annualized_strategy_return": 0.0555749715766134,
+          "annualized_benchmark_return": 0.10028913528032235,
+          "annualized_relative_return": -0.040638557875350756,
+          "annual_active": -0.04223919728022163,
+          "tracking_error": 0.02693500951217396,
+          "information_ratio": -1.568189432460774,
+          "strategy_max_drawdown": -0.11067902270925212,
+          "benchmark_max_drawdown": -0.11020534603857646,
+          "relative_max_drawdown": -0.020731844487401063,
+          "annual_active_95pct": [
+            -0.041437417797995646,
+            -0.0005525232321388579
+          ],
+          "mean_one_way_turnover": 0.015320938383048622,
+          "cost_cny": 28872.517666424046,
+          "cost_daily_nav_bps": 0.23276024450771235,
+          "cumulative_cost_nav_bps": 29.327790807971756,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 0.3127926944190113,
+          "blocked_value_daily_nav_bps": 2.8575559273919118,
+          "cash_cut_value_daily_nav_bps": 2.8780910224041723
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": 0.045586798505907744,
+          "benchmark_cumulative_return": 0.0489466789500419,
+          "cumulative_return_difference": -0.0033598804441341557,
+          "cumulative_relative_return": -0.0032030993677364394,
+          "annualized_strategy_return": 0.09325175320983381,
+          "annualized_benchmark_return": 0.10028913528032235,
+          "annualized_relative_return": -0.0063959388899133,
+          "annual_active": -0.008183432596252427,
+          "tracking_error": 0.03248304701323307,
+          "information_ratio": -0.25192934003139017,
+          "strategy_max_drawdown": -0.11067902270925212,
+          "benchmark_max_drawdown": -0.11020534603857646,
+          "relative_max_drawdown": -0.019793981080030276,
+          "annual_active_95pct": [
+            -0.02535448699938889,
+            0.09439768167882588
+          ],
+          "mean_one_way_turnover": 0.02355393604800274,
+          "cost_cny": 46554.33640331944,
+          "cost_daily_nav_bps": 0.3727697882371181,
+          "cumulative_cost_nav_bps": 46.96899331787688,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 0.18071047747852778,
+          "blocked_value_daily_nav_bps": 6.470645375302235,
+          "cash_cut_value_daily_nav_bps": 6.390562867429519
+        },
+        "double_fees": {
+          "strategy_cumulative_return": 0.04269118593830723,
+          "benchmark_cumulative_return": 0.0489466789500419,
+          "cumulative_return_difference": -0.00625549301173467,
+          "cumulative_relative_return": -0.00596359484925979,
+          "annualized_strategy_return": 0.08720490923343349,
+          "annualized_benchmark_return": 0.10028913528032235,
+          "annualized_relative_return": -0.01189162523499343,
+          "annual_active": -0.0138673991249878,
+          "tracking_error": 0.03385811645231246,
+          "information_ratio": -0.409573850468598,
+          "strategy_max_drawdown": -0.11109764709565906,
+          "benchmark_max_drawdown": -0.11020534603857646,
+          "relative_max_drawdown": -0.02195694583999519,
+          "annual_active_95pct": [
+            -0.0328991282955169,
+            0.0961442283817516
+          ],
+          "mean_one_way_turnover": 0.024593387458171717,
+          "cost_cny": 97376.3260229095,
+          "cost_daily_nav_bps": 0.7811676934872401,
+          "cumulative_cost_nav_bps": 98.42712937939226,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 6.218250703210549,
+          "cash_cut_value_daily_nav_bps": 6.82624139558921
+        },
+        "capacity": {
+          "strategy_cumulative_return": 0.042145698595200676,
+          "benchmark_cumulative_return": 0.0489466789500419,
+          "cumulative_return_difference": -0.006800980354841224,
+          "cumulative_relative_return": -0.0064836282828492076,
+          "annualized_strategy_return": 0.08606765710047881,
+          "annualized_benchmark_return": 0.10028913528032235,
+          "annualized_relative_return": -0.01292521912998823,
+          "annual_active": -0.014863252334613053,
+          "tracking_error": 0.03704018057049143,
+          "information_ratio": -0.4012737547627958,
+          "strategy_max_drawdown": -0.11031639477849464,
+          "benchmark_max_drawdown": -0.11020534603857646,
+          "relative_max_drawdown": -0.023237972767607973,
+          "annual_active_95pct": [
+            -0.0278839389550251,
+            0.09761041207090734
+          ],
+          "mean_one_way_turnover": 0.02168506036051242,
+          "cost_cny": 1273400.9173948197,
+          "cost_daily_nav_bps": 0.3410435201868693,
+          "cumulative_cost_nav_bps": 42.97148354354553,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 50.16920945462515,
+          "blocked_value_daily_nav_bps": 5.4464892740819755,
+          "cash_cut_value_daily_nav_bps": 4.723243379097956
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.038244192333259486,
+          "annual_active_difference_95pct": [
+            -0.010155302222924305,
+            0.10873883805209515
+          ],
+          "cumulative_relative_return": 0.01988179355250752
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.004188427649290061,
+          "annual_active_difference_95pct": [
+            -0.0024629031215621044,
+            0.014237399539458072
+          ],
+          "cumulative_relative_return": 0.002153597698448806
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.009872394178027433,
+          "annual_active_difference_95pct": [
+            -0.011836230412095507,
+            -0.005607450773277217
+          ],
+          "cumulative_relative_return": -0.004912384434758832
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": -0.010868247387648688,
+          "annual_active_difference_95pct": [
+            -0.011181948775571935,
+            0.0013445023496248946
+          ],
+          "cumulative_relative_return": -0.005432967812553868
+        }
+      }
+    },
+    "2020": {
+      "opening_close": "2019-12-31",
+      "first_trade": "2020-01-02",
+      "last_trade": "2020-12-31",
+      "days": 243,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": 0.33279164542423834,
+          "benchmark_cumulative_return": 0.2045359150314101,
+          "cumulative_return_difference": 0.12825573039282823,
+          "cumulative_relative_return": 0.10647729867771005,
+          "annualized_strategy_return": 0.3470480458844636,
+          "annualized_benchmark_return": 0.21286671529947032,
+          "annualized_relative_return": 0.11063155488759735,
+          "annual_active": 0.10296186829330164,
+          "tracking_error": 0.036556106955299726,
+          "information_ratio": 2.8165435783192647,
+          "strategy_max_drawdown": -0.14683865265650675,
+          "benchmark_max_drawdown": -0.15661473826580807,
+          "relative_max_drawdown": -0.01789406946226124,
+          "annual_active_95pct": [
+            0.04946771404533793,
+            0.17945562938672815
+          ],
+          "mean_one_way_turnover": 0.02016473925749375,
+          "cost_cny": 107688.23039846658,
+          "cost_daily_nav_bps": 0.3429207137213447,
+          "cumulative_cost_nav_bps": 83.32973343428677,
+          "writeoff_cny": 1279.3129392674284,
+          "max_stale_closes": 98,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 25.73884437923749,
+          "cash_cut_value_daily_nav_bps": 22.740358942320263
+        },
+        "passive": {
+          "strategy_cumulative_return": 0.2008861501862853,
+          "benchmark_cumulative_return": 0.2045359150314101,
+          "cumulative_return_difference": -0.0036497648451248033,
+          "cumulative_relative_return": -0.0030300174528458124,
+          "annualized_strategy_return": 0.2090558106577216,
+          "annualized_benchmark_return": 0.21286671529947032,
+          "annualized_relative_return": -0.0031420638341186358,
+          "annual_active": -0.0033441239750223195,
+          "tracking_error": 0.004228772703505339,
+          "information_ratio": -0.7908024879772537,
+          "strategy_max_drawdown": -0.15657777183052024,
+          "benchmark_max_drawdown": -0.15661473826580807,
+          "relative_max_drawdown": -0.007036225949822783,
+          "annual_active_95pct": [
+            -0.011998537142538786,
+            0.007947331676383293
+          ],
+          "mean_one_way_turnover": 0.012477576985807438,
+          "cost_cny": 60155.785617758986,
+          "cost_daily_nav_bps": 0.21219307633544388,
+          "cumulative_cost_nav_bps": 51.56291754951286,
+          "writeoff_cny": 1817.6445762087242,
+          "max_stale_closes": 98,
+          "capacity_cut_value_daily_nav_bps": 1.7302763237135006,
+          "blocked_value_daily_nav_bps": 59.858930443765175,
+          "cash_cut_value_daily_nav_bps": 59.70968687022138
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": 0.32190556219866284,
+          "benchmark_cumulative_return": 0.2045359150314101,
+          "cumulative_return_difference": 0.11736964716725273,
+          "cumulative_relative_return": 0.09743972404857026,
+          "annualized_strategy_return": 0.33563974744054215,
+          "annualized_benchmark_return": 0.21286671529947032,
+          "annualized_relative_return": 0.10122549377633616,
+          "annual_active": 0.09480755634531439,
+          "tracking_error": 0.034915887227880485,
+          "information_ratio": 2.715312823831386,
+          "strategy_max_drawdown": -0.1486904447276497,
+          "benchmark_max_drawdown": -0.15661473826580807,
+          "relative_max_drawdown": -0.017114324720077567,
+          "annual_active_95pct": [
+            0.04272695099225495,
+            0.1656017060876726
+          ],
+          "mean_one_way_turnover": 0.01915878507394967,
+          "cost_cny": 101567.7119020982,
+          "cost_daily_nav_bps": 0.32581349531792625,
+          "cumulative_cost_nav_bps": 79.17267936225608,
+          "writeoff_cny": 1548.6076471952017,
+          "max_stale_closes": 98,
+          "capacity_cut_value_daily_nav_bps": 0.6031042331273172,
+          "blocked_value_daily_nav_bps": 27.749856406213667,
+          "cash_cut_value_daily_nav_bps": 25.3006796778547
+        },
+        "double_fees": {
+          "strategy_cumulative_return": 0.32179736565496797,
+          "benchmark_cumulative_return": 0.2045359150314101,
+          "cumulative_return_difference": 0.11726145062355786,
+          "cumulative_relative_return": 0.09734989979148945,
+          "annualized_strategy_return": 0.3355263780266726,
+          "annualized_benchmark_return": 0.21286671529947032,
+          "annualized_relative_return": 0.1011320214990945,
+          "annual_active": 0.09435494140839693,
+          "tracking_error": 0.03655493980409891,
+          "information_ratio": 2.581181692927228,
+          "strategy_max_drawdown": -0.14736069279357544,
+          "benchmark_max_drawdown": -0.15661473826580807,
+          "relative_max_drawdown": -0.01820072215137436,
+          "annual_active_95pct": [
+            0.0407578498418756,
+            0.1714568751376421
+          ],
+          "mean_one_way_turnover": 0.020156589196987887,
+          "cost_cny": 213370.28923413588,
+          "cost_daily_nav_bps": 0.6858043405279018,
+          "cumulative_cost_nav_bps": 166.65045474828014,
+          "writeoff_cny": 1270.2687793651269,
+          "max_stale_closes": 98,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 25.854759159519986,
+          "cash_cut_value_daily_nav_bps": 23.18771070493257
+        },
+        "capacity": {
+          "strategy_cumulative_return": 0.32814747738253525,
+          "benchmark_cumulative_return": 0.2045359150314101,
+          "cumulative_return_difference": 0.12361156235112514,
+          "cumulative_relative_return": 0.10262173241044614,
+          "annualized_strategy_return": 0.3421806691646454,
+          "annualized_benchmark_return": 0.21286671529947032,
+          "annualized_relative_return": 0.10661843732206489,
+          "annual_active": 0.0994148922388446,
+          "tracking_error": 0.03662180027583158,
+          "information_ratio": 2.714636950943482,
+          "strategy_max_drawdown": -0.14722744734034787,
+          "benchmark_max_drawdown": -0.15661473826580807,
+          "relative_max_drawdown": -0.018138758753156514,
+          "annual_active_95pct": [
+            0.044611056947433336,
+            0.17665125213918345
+          ],
+          "mean_one_way_turnover": 0.018906545055341777,
+          "cost_cny": 3008421.848594556,
+          "cost_daily_nav_bps": 0.32152403335678464,
+          "cumulative_cost_nav_bps": 78.13034010569866,
+          "writeoff_cny": 40274.69500250073,
+          "max_stale_closes": 98,
+          "capacity_cut_value_daily_nav_bps": 8.28046205112783e-15,
+          "blocked_value_daily_nav_bps": 17.087374308876573,
+          "cash_cut_value_daily_nav_bps": 15.044006570444866
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.10630599226832235,
+          "annual_active_difference_95pct": [
+            0.05147364542844797,
+            0.180919036345806
+          ],
+          "cumulative_relative_return": 0.10984013365254608
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.008154311947986917,
+          "annual_active_difference_95pct": [
+            0.0018016804620753603,
+            0.01992686921772645
+          ],
+          "cumulative_relative_return": 0.008235144428524022
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.008606926884905428,
+          "annual_active_difference_95pct": [
+            -0.009646584975839555,
+            -0.007680344772014185
+          ],
+          "cumulative_relative_return": -0.008249061139463332
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": -0.003546976054456123,
+          "annual_active_difference_95pct": [
+            -0.007959466748962682,
+            -0.0007569839754370818
+          ],
+          "cumulative_relative_return": -0.003484541681850639
+        }
+      }
+    },
+    "2021": {
+      "opening_close": "2020-12-31",
+      "first_trade": "2021-01-04",
+      "last_trade": "2021-12-31",
+      "days": 243,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": 0.2712355037430272,
+          "benchmark_cumulative_return": 0.2161072961036612,
+          "cumulative_return_difference": 0.05512820763936599,
+          "cumulative_relative_return": 0.04533169714217955,
+          "annualized_strategy_return": 0.2825852357343761,
+          "annualized_benchmark_return": 0.22495180292810324,
+          "annualized_relative_return": 0.04704955139337463,
+          "annual_active": 0.04446957002118754,
+          "tracking_error": 0.03112027290713994,
+          "information_ratio": 1.4289582277726383,
+          "strategy_max_drawdown": -0.10090745364166431,
+          "benchmark_max_drawdown": -0.11195699493189637,
+          "relative_max_drawdown": -0.03427132356839069,
+          "annual_active_95pct": [
+            -0.03512852288335916,
+            0.11911635478383428
+          ],
+          "mean_one_way_turnover": 0.01685253828518468,
+          "cost_cny": 107922.59578292808,
+          "cost_daily_nav_bps": 0.28659345855863505,
+          "cumulative_cost_nav_bps": 69.64221042974832,
+          "writeoff_cny": 904.3182337826689,
+          "max_stale_closes": 341,
+          "capacity_cut_value_daily_nav_bps": 7.170121631698049e-18,
+          "blocked_value_daily_nav_bps": 55.23931532317425,
+          "cash_cut_value_daily_nav_bps": 55.20426963866016
+        },
+        "passive": {
+          "strategy_cumulative_return": 0.22131608584249585,
+          "benchmark_cumulative_return": 0.2161072961036612,
+          "cumulative_return_difference": 0.005208789738834652,
+          "cumulative_relative_return": 0.004283166259690496,
+          "annualized_strategy_return": 0.23039322732997514,
+          "annualized_benchmark_return": 0.22495180292810324,
+          "annualized_relative_return": 0.004442153878107424,
+          "annual_active": 0.004266181654151717,
+          "tracking_error": 0.004704542039471793,
+          "information_ratio": 0.9068218794428515,
+          "strategy_max_drawdown": -0.1113424153715693,
+          "benchmark_max_drawdown": -0.11195699493189637,
+          "relative_max_drawdown": -0.003546281642267557,
+          "annual_active_95pct": [
+            -0.005615621116793334,
+            0.015107017131628597
+          ],
+          "mean_one_way_turnover": 0.012432984530314899,
+          "cost_cny": 68610.89772140683,
+          "cost_daily_nav_bps": 0.21143473917406416,
+          "cumulative_cost_nav_bps": 51.37864161929759,
+          "writeoff_cny": 5088.240195141697,
+          "max_stale_closes": 341,
+          "capacity_cut_value_daily_nav_bps": 2.051983814891305,
+          "blocked_value_daily_nav_bps": 113.19172499301546,
+          "cash_cut_value_daily_nav_bps": 114.23696755869061
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": 0.2529143855875524,
+          "benchmark_cumulative_return": 0.2161072961036612,
+          "cumulative_return_difference": 0.03680708948389122,
+          "cumulative_relative_return": 0.03026631745555597,
+          "annualized_strategy_return": 0.2634210663398644,
+          "annualized_benchmark_return": 0.22495180292810324,
+          "annualized_relative_return": 0.03140471594050043,
+          "annual_active": 0.02987149363539519,
+          "tracking_error": 0.030671789857983047,
+          "information_ratio": 0.9739077430337976,
+          "strategy_max_drawdown": -0.10198470638575297,
+          "benchmark_max_drawdown": -0.11195699493189637,
+          "relative_max_drawdown": -0.04007570345053946,
+          "annual_active_95pct": [
+            -0.04970018312347593,
+            0.10440568758697885
+          ],
+          "mean_one_way_turnover": 0.015919773711568847,
+          "cost_cny": 100191.99875623986,
+          "cost_daily_nav_bps": 0.27073090891479057,
+          "cumulative_cost_nav_bps": 65.7876108662941,
+          "writeoff_cny": 540.2174696595195,
+          "max_stale_closes": 341,
+          "capacity_cut_value_daily_nav_bps": 0.695212637714531,
+          "blocked_value_daily_nav_bps": 62.47997530311208,
+          "cash_cut_value_daily_nav_bps": 63.110378004301275
+        },
+        "double_fees": {
+          "strategy_cumulative_return": 0.2624100304680326,
+          "benchmark_cumulative_return": 0.2161072961036612,
+          "cumulative_return_difference": 0.04630273436437138,
+          "cumulative_relative_return": 0.038074546968612566,
+          "annualized_strategy_return": 0.2733523697640665,
+          "annualized_benchmark_return": 0.22495180292810324,
+          "annualized_relative_return": 0.039512221395378244,
+          "annual_active": 0.03723741869235102,
+          "tracking_error": 0.031116869875817885,
+          "information_ratio": 1.1966955172856137,
+          "strategy_max_drawdown": -0.10114158581623345,
+          "benchmark_max_drawdown": -0.11195699493189637,
+          "relative_max_drawdown": -0.03636073561767417,
+          "annual_active_95pct": [
+            -0.04247753939254974,
+            0.11182850410873849
+          ],
+          "mean_one_way_turnover": 0.01684278002616642,
+          "cost_cny": 212193.3840645993,
+          "cost_daily_nav_bps": 0.5730556598515543,
+          "cumulative_cost_nav_bps": 139.2525253439277,
+          "writeoff_cny": 898.6662606099285,
+          "max_stale_closes": 341,
+          "capacity_cut_value_daily_nav_bps": 1.4064676677549865e-18,
+          "blocked_value_daily_nav_bps": 55.544765736351074,
+          "cash_cut_value_daily_nav_bps": 55.79631569898911
+        },
+        "capacity": {
+          "strategy_cumulative_return": 0.27542449406861413,
+          "benchmark_cumulative_return": 0.2161072961036612,
+          "cumulative_return_difference": 0.05931719796495294,
+          "cumulative_relative_return": 0.04877628656205091,
+          "annualized_strategy_return": 0.2869684259723724,
+          "annualized_benchmark_return": 0.22495180292810324,
+          "annualized_relative_return": 0.05062780665820954,
+          "annual_active": 0.0481067374396255,
+          "tracking_error": 0.029837472543517575,
+          "information_ratio": 1.612292642061503,
+          "strategy_max_drawdown": -0.10039743107503463,
+          "benchmark_max_drawdown": -0.11195699493189637,
+          "relative_max_drawdown": -0.03134499494708509,
+          "annual_active_95pct": [
+            -0.029630878834190428,
+            0.11859683309096303
+          ],
+          "mean_one_way_turnover": 0.015784353505435927,
+          "cost_cny": 3017869.119223902,
+          "cost_daily_nav_bps": 0.26842795937819314,
+          "cumulative_cost_nav_bps": 65.22799412890093,
+          "writeoff_cny": 31019.224681301046,
+          "max_stale_closes": 341,
+          "capacity_cut_value_daily_nav_bps": 9.513680861586874e-15,
+          "blocked_value_daily_nav_bps": 28.36088461034509,
+          "cash_cut_value_daily_nav_bps": 28.405373441062217
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.04020338836703709,
+          "annual_active_difference_95pct": [
+            -0.04049657259353454,
+            0.11398677370893996
+          ],
+          "cumulative_relative_return": 0.04087346304465944
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.014598076385792115,
+          "annual_active_difference_95pct": [
+            0.0010299165193253029,
+            0.025508117565534023
+          ],
+          "cumulative_relative_return": 0.014622801339202018
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.007232151328835023,
+          "annual_active_difference_95pct": [
+            -0.007728742156429704,
+            -0.006578508323284033
+          ],
+          "cumulative_relative_return": -0.006942437690741765
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": 0.0036371674184395783,
+          "annual_active_difference_95pct": [
+            -0.004678774614203593,
+            0.008811005897371396
+          ],
+          "cumulative_relative_return": 0.0032952118732152424
+        }
+      }
+    },
+    "2022": {
+      "opening_close": "2021-12-31",
+      "first_trade": "2022-01-04",
+      "last_trade": "2022-12-30",
+      "days": 242,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": -0.1320447326727472,
+          "benchmark_cumulative_return": -0.20771242887366392,
+          "cumulative_return_difference": 0.07566769620091673,
+          "cumulative_relative_return": 0.09550534295690838,
+          "annualized_strategy_return": -0.13710905625738057,
+          "annualized_benchmark_return": -0.21529856259233626,
+          "annualized_relative_return": 0.09964236409871008,
+          "annual_active": 0.09315339570216857,
+          "tracking_error": 0.02717241926103149,
+          "information_ratio": 3.4282334159241286,
+          "strategy_max_drawdown": -0.32926285497762386,
+          "benchmark_max_drawdown": -0.34236015492257,
+          "relative_max_drawdown": -0.01301418741758753,
+          "annual_active_95pct": [
+            0.03926335653140423,
+            0.15581481285148618
+          ],
+          "mean_one_way_turnover": 0.012773399259334657,
+          "cost_cny": 81456.65579008863,
+          "cost_daily_nav_bps": 0.2172238157441996,
+          "cumulative_cost_nav_bps": 52.568163410096304,
+          "writeoff_cny": 2275.5584251721552,
+          "max_stale_closes": 583,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 59.60060027752301,
+          "cash_cut_value_daily_nav_bps": 59.5915239461288
+        },
+        "passive": {
+          "strategy_cumulative_return": -0.2032142347109288,
+          "benchmark_cumulative_return": -0.20771242887366392,
+          "cumulative_return_difference": 0.004498194162735114,
+          "cumulative_relative_return": 0.00567747662170226,
+          "annualized_strategy_return": -0.21065879927971964,
+          "annualized_benchmark_return": -0.21529856259233626,
+          "annualized_relative_return": 0.00591277534541601,
+          "annual_active": 0.005816519295983907,
+          "tracking_error": 0.0032316495630836206,
+          "information_ratio": 1.799860777736624,
+          "strategy_max_drawdown": -0.34161470772117997,
+          "benchmark_max_drawdown": -0.34236015492257,
+          "relative_max_drawdown": -0.00132234089615213,
+          "annual_active_95pct": [
+            0.0008218209362607709,
+            0.011963663063193854
+          ],
+          "mean_one_way_turnover": 0.0106636193559826,
+          "cost_cny": 56137.32303242231,
+          "cost_daily_nav_bps": 0.18134499980163477,
+          "cumulative_cost_nav_bps": 43.885489951995616,
+          "writeoff_cny": 6420.400701494708,
+          "max_stale_closes": 583,
+          "capacity_cut_value_daily_nav_bps": 1.3808735474314695,
+          "blocked_value_daily_nav_bps": 98.29749181777282,
+          "cash_cut_value_daily_nav_bps": 99.11201447818755
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": -0.1441409780283206,
+          "benchmark_cumulative_return": -0.20771242887366392,
+          "cumulative_return_difference": 0.06357145084534332,
+          "cumulative_relative_return": 0.08023784944015788,
+          "annualized_strategy_return": -0.14962802913786377,
+          "annualized_benchmark_return": -0.21529856259233626,
+          "annualized_relative_return": 0.08368856016298554,
+          "annual_active": 0.07891021154119635,
+          "tracking_error": 0.025564131506175362,
+          "information_ratio": 3.086755031053354,
+          "strategy_max_drawdown": -0.3330623844174895,
+          "benchmark_max_drawdown": -0.34236015492257,
+          "relative_max_drawdown": -0.014813561830224753,
+          "annual_active_95pct": [
+            0.028295083877803457,
+            0.13841881378825552
+          ],
+          "mean_one_way_turnover": 0.012042378430450957,
+          "cost_cny": 74332.2260877637,
+          "cost_daily_nav_bps": 0.20479211055636098,
+          "cumulative_cost_nav_bps": 49.559690754639355,
+          "writeoff_cny": 3164.7049183954714,
+          "max_stale_closes": 583,
+          "capacity_cut_value_daily_nav_bps": 0.5376921143965744,
+          "blocked_value_daily_nav_bps": 63.224873602655485,
+          "cash_cut_value_daily_nav_bps": 63.74197671867874
+        },
+        "double_fees": {
+          "strategy_cumulative_return": -0.13658410464662518,
+          "benchmark_cumulative_return": -0.20771242887366392,
+          "cumulative_return_difference": 0.07112832422703874,
+          "cumulative_relative_return": 0.08977589302066291,
+          "annualized_strategy_return": -0.14180791624966238,
+          "annualized_benchmark_return": -0.21529856259233626,
+          "annualized_relative_return": 0.09365427771542945,
+          "annual_active": 0.08769319312204875,
+          "tracking_error": 0.027188873059116204,
+          "information_ratio": 3.225333868431371,
+          "strategy_max_drawdown": -0.33019607010674124,
+          "benchmark_max_drawdown": -0.34236015492257,
+          "relative_max_drawdown": -0.013505891456027097,
+          "annual_active_95pct": [
+            0.03396267039477697,
+            0.15032064740249823
+          ],
+          "mean_one_way_turnover": 0.01276263572125253,
+          "cost_cny": 159162.74955837562,
+          "cost_daily_nav_bps": 0.434233578027205,
+          "cumulative_cost_nav_bps": 105.08452588258362,
+          "writeoff_cny": 2250.3161787254126,
+          "max_stale_closes": 583,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 60.031719918786756,
+          "cash_cut_value_daily_nav_bps": 60.23912295349875
+        },
+        "capacity": {
+          "strategy_cumulative_return": -0.13286468911823024,
+          "benchmark_cumulative_return": -0.20771242887366392,
+          "cumulative_return_difference": 0.07484773975543368,
+          "cumulative_relative_return": 0.09447042018976548,
+          "annualized_strategy_return": -0.13795789666911762,
+          "annualized_benchmark_return": -0.21529856259233626,
+          "annualized_relative_return": 0.09856062731160642,
+          "annual_active": 0.09237265393128981,
+          "tracking_error": 0.026395473859547495,
+          "information_ratio": 3.4995641458385007,
+          "strategy_max_drawdown": -0.32951555049675196,
+          "benchmark_max_drawdown": -0.34236015492257,
+          "relative_max_drawdown": -0.012071728114626423,
+          "annual_active_95pct": [
+            0.04137900791035954,
+            0.15403873173123195
+          ],
+          "mean_one_way_turnover": 0.012688162635198357,
+          "cost_cny": 2413278.955068316,
+          "cost_daily_nav_bps": 0.21577428579840147,
+          "cumulative_cost_nav_bps": 52.21737716321316,
+          "writeoff_cny": 65033.280627778535,
+          "max_stale_closes": 583,
+          "capacity_cut_value_daily_nav_bps": 5.974980017383011e-15,
+          "blocked_value_daily_nav_bps": 24.808599078449042,
+          "cash_cut_value_daily_nav_bps": 24.86109102463475
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.08733687640618477,
+          "annual_active_difference_95pct": [
+            0.032573196941643616,
+            0.1498648914919655
+          ],
+          "cumulative_relative_return": 0.08932074986600913
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.014243184160973725,
+          "annual_active_difference_95pct": [
+            0.007015742073461315,
+            0.020716134120825357
+          ],
+          "cumulative_relative_return": 0.014133455446560417
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.0054602025801234,
+          "annual_active_difference_95pct": [
+            -0.0060867291956022114,
+            -0.004875389887495246
+          ],
+          "cumulative_relative_return": -0.005229960741935824
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": -0.0007807417708809567,
+          "annual_active_difference_95pct": [
+            -0.004453385327906311,
+            0.004819793487400263
+          ],
+          "cumulative_relative_return": -0.0009446989681944906
+        }
+      }
+    },
+    "2023": {
+      "opening_close": "2022-12-30",
+      "first_trade": "2023-01-03",
+      "last_trade": "2023-12-29",
+      "days": 242,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": 0.012501321940450838,
+          "benchmark_cumulative_return": -0.05284166877946861,
+          "cumulative_return_difference": 0.06534299071991945,
+          "cumulative_relative_return": 0.06898845585375035,
+          "annualized_strategy_return": 0.01302125455869163,
+          "annualized_benchmark_return": -0.054964092412970844,
+          "annualized_relative_return": 0.07193943259283153,
+          "annual_active": 0.067952859209394,
+          "tracking_error": 0.026697771221274466,
+          "information_ratio": 2.5452633722190594,
+          "strategy_max_drawdown": -0.15480615462710257,
+          "benchmark_max_drawdown": -0.19355567625557457,
+          "relative_max_drawdown": -0.012582029235116865,
+          "annual_active_95pct": [
+            0.018116515129033204,
+            0.12663361640260692
+          ],
+          "mean_one_way_turnover": 0.010712686996853328,
+          "cost_cny": 72944.65317105738,
+          "cost_daily_nav_bps": 0.18217944175111944,
+          "cumulative_cost_nav_bps": 44.0874249037709,
+          "writeoff_cny": 8934.546990063965,
+          "max_stale_closes": 825,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 43.08035771311209,
+          "cash_cut_value_daily_nav_bps": 42.465597925585165
+        },
+        "passive": {
+          "strategy_cumulative_return": -0.05584007632833943,
+          "benchmark_cumulative_return": -0.05284166877946861,
+          "cumulative_return_difference": -0.0029984075488708184,
+          "cumulative_relative_return": -0.0031656877736661038,
+          "annualized_strategy_return": -0.05807920055895832,
+          "annualized_benchmark_return": -0.054964092412970844,
+          "annualized_relative_return": -0.0032962854860630886,
+          "annual_active": -0.003319492948679828,
+          "tracking_error": 0.0025994811511199875,
+          "information_ratio": -1.2769828883927945,
+          "strategy_max_drawdown": -0.1947006401445992,
+          "benchmark_max_drawdown": -0.19355567625557457,
+          "relative_max_drawdown": -0.0033115797920172385,
+          "annual_active_95pct": [
+            -0.007520905217152777,
+            0.0015118864660412588
+          ],
+          "mean_one_way_turnover": 0.009283493337044006,
+          "cost_cny": 47225.462599578444,
+          "cost_daily_nav_bps": 0.15787464285474728,
+          "cumulative_cost_nav_bps": 38.20566357084884,
+          "writeoff_cny": 8306.013463864667,
+          "max_stale_closes": 825,
+          "capacity_cut_value_daily_nav_bps": 1.947973728294861,
+          "blocked_value_daily_nav_bps": 60.26711048902845,
+          "cash_cut_value_daily_nav_bps": 61.77318359771025
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": 0.009234188044356939,
+          "benchmark_cumulative_return": -0.05284166877946861,
+          "cumulative_return_difference": 0.06207585682382555,
+          "cumulative_relative_return": 0.0655390495735102,
+          "annualized_strategy_return": 0.009617595255929867,
+          "annualized_benchmark_return": -0.054964092412970844,
+          "annualized_relative_return": 0.06833781356921964,
+          "annual_active": 0.06474274964050314,
+          "tracking_error": 0.02534363097558347,
+          "information_ratio": 2.55459644685,
+          "strategy_max_drawdown": -0.1589452585763933,
+          "benchmark_max_drawdown": -0.19355567625557457,
+          "relative_max_drawdown": -0.011923815607597255,
+          "annual_active_95pct": [
+            0.017099320319788145,
+            0.1198887182991024
+          ],
+          "mean_one_way_turnover": 0.010048601560064428,
+          "cost_cny": 65770.6216742601,
+          "cost_daily_nav_bps": 0.1708860366339172,
+          "cumulative_cost_nav_bps": 41.35442086540796,
+          "writeoff_cny": 10072.313000182381,
+          "max_stale_closes": 825,
+          "capacity_cut_value_daily_nav_bps": 1.8553096852939623,
+          "blocked_value_daily_nav_bps": 45.24434803334235,
+          "cash_cut_value_daily_nav_bps": 46.24799215257399
+        },
+        "double_fees": {
+          "strategy_cumulative_return": 0.008054859492582667,
+          "benchmark_cumulative_return": -0.05284166877946861,
+          "cumulative_return_difference": 0.060896528272051276,
+          "cumulative_relative_return": 0.06429392664854516,
+          "annualized_strategy_return": 0.008389097251841449,
+          "annualized_benchmark_return": -0.054964092412970844,
+          "annualized_relative_return": 0.06703786507601883,
+          "annual_active": 0.06336851325111846,
+          "tracking_error": 0.026697797504947003,
+          "information_ratio": 2.3735483512966384,
+          "strategy_max_drawdown": -0.1566134807299896,
+          "benchmark_max_drawdown": -0.19355567625557457,
+          "relative_max_drawdown": -0.013016176330171492,
+          "annual_active_95pct": [
+            0.013524423009106737,
+            0.12222417360534281
+          ],
+          "mean_one_way_turnover": 0.010704252910098338,
+          "cost_cny": 141858.69741590176,
+          "cost_daily_nav_bps": 0.36419953862037774,
+          "cumulative_cost_nav_bps": 88.13628834613141,
+          "writeoff_cny": 8694.262538799921,
+          "max_stale_closes": 825,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 43.36695889492278,
+          "cash_cut_value_daily_nav_bps": 42.93769516817154
+        },
+        "capacity": {
+          "strategy_cumulative_return": 0.013621632054781507,
+          "benchmark_cumulative_return": -0.05284166877946861,
+          "cumulative_return_difference": 0.06646330083425012,
+          "cumulative_relative_return": 0.07017126772099846,
+          "annualized_strategy_return": 0.014188484219834763,
+          "annualized_benchmark_return": -0.054964092412970844,
+          "annualized_relative_return": 0.0731745493241347,
+          "annual_active": 0.0691224440804432,
+          "tracking_error": 0.026603397947431415,
+          "information_ratio": 2.598256215880011,
+          "strategy_max_drawdown": -0.15480906335231615,
+          "benchmark_max_drawdown": -0.19355567625557457,
+          "relative_max_drawdown": -0.012825113520119502,
+          "annual_active_95pct": [
+            0.01795184743876612,
+            0.12929824685407781
+          ],
+          "mean_one_way_turnover": 0.010572278108806503,
+          "cost_cny": 2147574.287953794,
+          "cost_daily_nav_bps": 0.17979165492893565,
+          "cumulative_cost_nav_bps": 43.50958049280243,
+          "writeoff_cny": 288996.7051854704,
+          "max_stale_closes": 825,
+          "capacity_cut_value_daily_nav_bps": 5.798609294558248e-15,
+          "blocked_value_daily_nav_bps": 17.29128733270367,
+          "cash_cut_value_daily_nav_bps": 16.819476022754692
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.07127235215807418,
+          "annual_active_difference_95pct": [
+            0.02295217413458127,
+            0.12794827465863381
+          ],
+          "cumulative_relative_return": 0.07238328651254666
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.0032101095688920303,
+          "annual_active_difference_95pct": [
+            -0.002683977219867439,
+            0.010975968158847015
+          ],
+          "cumulative_relative_return": 0.003237240607578684
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.0045843459582776275,
+          "annual_active_difference_95pct": [
+            -0.005124092166666461,
+            -0.003878546990552662
+          ],
+          "cumulative_relative_return": -0.004391562116034198
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": 0.0011695848710477964,
+          "annual_active_difference_95pct": [
+            -0.001714379498192224,
+            0.005166242650374351
+          ],
+          "cumulative_relative_return": 0.0011064776806253285
+        }
+      }
+    },
+    "2024": {
+      "opening_close": "2023-12-29",
+      "first_trade": "2024-01-02",
+      "last_trade": "2024-06-28",
+      "days": 117,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": -0.12999356299835252,
+          "benchmark_cumulative_return": -0.15989208246447573,
+          "cumulative_return_difference": 0.029898519466123208,
+          "cumulative_relative_return": 0.035588903332599564,
+          "annualized_strategy_return": -0.2591322407566442,
+          "annualized_benchmark_return": -0.3128850495793345,
+          "annualized_relative_return": 0.07822971802575673,
+          "annual_active": 0.07138144722057851,
+          "tracking_error": 0.02981096694027091,
+          "information_ratio": 2.3944693697322195,
+          "strategy_max_drawdown": -0.2573312829671285,
+          "benchmark_max_drawdown": -0.27076248727754704,
+          "relative_max_drawdown": -0.017040843419037777,
+          "annual_active_95pct": [
+            -0.03825676284850423,
+            0.15489138455901696
+          ],
+          "mean_one_way_turnover": 0.007851341882205286,
+          "cost_cny": 22598.489253500626,
+          "cost_daily_nav_bps": 0.13351929189844833,
+          "cumulative_cost_nav_bps": 15.621757152118455,
+          "writeoff_cny": 1374.3593532982795,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 23.250260741683217,
+          "cash_cut_value_daily_nav_bps": 18.432522458529714
+        },
+        "passive": {
+          "strategy_cumulative_return": -0.16399909918766287,
+          "benchmark_cumulative_return": -0.15989208246447573,
+          "cumulative_return_difference": -0.00410701672318714,
+          "cumulative_relative_return": -0.0048886775585155196,
+          "annualized_strategy_return": -0.32009959826004175,
+          "annualized_benchmark_return": -0.3128850495793345,
+          "annualized_relative_return": -0.010499769618300903,
+          "annual_active": -0.010337322693307996,
+          "tracking_error": 0.004406047028422779,
+          "information_ratio": -2.346167125912049,
+          "strategy_max_drawdown": -0.2721924132811835,
+          "benchmark_max_drawdown": -0.27076248727754704,
+          "relative_max_drawdown": -0.005247430418676258,
+          "annual_active_95pct": [
+            -0.019836983543876842,
+            -0.0003974077158259717
+          ],
+          "mean_one_way_turnover": 0.010651800940877384,
+          "cost_cny": 21647.257510842606,
+          "cost_daily_nav_bps": 0.18114401640065575,
+          "cumulative_cost_nav_bps": 21.193849918876722,
+          "writeoff_cny": 3960.9205952224675,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 3.30857514728362,
+          "blocked_value_daily_nav_bps": 37.45768663101481,
+          "cash_cut_value_daily_nav_bps": 38.94388644120019
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": -0.1337747653668595,
+          "benchmark_cumulative_return": -0.15989208246447573,
+          "cumulative_return_difference": 0.02611731709761622,
+          "cumulative_relative_return": 0.031088050180781535,
+          "annualized_strategy_return": -0.26605011641623766,
+          "annualized_benchmark_return": -0.3128850495793345,
+          "annualized_relative_return": 0.06816171462202014,
+          "annual_active": 0.06236228585160828,
+          "tracking_error": 0.027600567604528305,
+          "information_ratio": 2.259456643977741,
+          "strategy_max_drawdown": -0.2579015998963685,
+          "benchmark_max_drawdown": -0.27076248727754704,
+          "relative_max_drawdown": -0.016012794380158346,
+          "annual_active_95pct": [
+            -0.036726755745072344,
+            0.1371991816031984
+          ],
+          "mean_one_way_turnover": 0.007597084426484235,
+          "cost_cny": 20927.93036094423,
+          "cost_daily_nav_bps": 0.12919554666019836,
+          "cumulative_cost_nav_bps": 15.11587895924321,
+          "writeoff_cny": 1491.220299570506,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 1.4936597535534957,
+          "blocked_value_daily_nav_bps": 26.321483796905387,
+          "cash_cut_value_daily_nav_bps": 22.960569012662447
+        },
+        "double_fees": {
+          "strategy_cumulative_return": -0.1313540558985069,
+          "benchmark_cumulative_return": -0.15989208246447573,
+          "cumulative_return_difference": 0.02853802656596882,
+          "cumulative_relative_return": 0.03396947698063091,
+          "annualized_strategy_return": -0.26162532660075255,
+          "annualized_benchmark_return": -0.3128850495793345,
+          "annualized_relative_return": 0.07460137921202215,
+          "annual_active": 0.06801256641021285,
+          "tracking_error": 0.029846949771677504,
+          "information_ratio": 2.278710787215906,
+          "strategy_max_drawdown": -0.2575163320679804,
+          "benchmark_max_drawdown": -0.27076248727754704,
+          "relative_max_drawdown": -0.017308049292712457,
+          "annual_active_95pct": [
+            -0.04088022828867978,
+            0.15176125805358798
+          ],
+          "mean_one_way_turnover": 0.007845163370965311,
+          "cost_cny": 43816.15732015568,
+          "cost_daily_nav_bps": 0.2669219123709036,
+          "cumulative_cost_nav_bps": 31.229863747395722,
+          "writeoff_cny": 1334.4993725878833,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 23.33575903762815,
+          "cash_cut_value_daily_nav_bps": 18.64230581439182
+        },
+        "capacity": {
+          "strategy_cumulative_return": -0.13182527996556914,
+          "benchmark_cumulative_return": -0.15989208246447573,
+          "cumulative_return_difference": 0.028066802498906585,
+          "cumulative_relative_return": 0.03340856801021608,
+          "annualized_strategy_return": -0.26248778905775694,
+          "annualized_benchmark_return": -0.3128850495793345,
+          "annualized_relative_return": 0.07334618536639814,
+          "annual_active": 0.0672036383901614,
+          "tracking_error": 0.028792609709314944,
+          "information_ratio": 2.334058602837233,
+          "strategy_max_drawdown": -0.2588021120470534,
+          "benchmark_max_drawdown": -0.27076248727754704,
+          "relative_max_drawdown": -0.01581205564087229,
+          "annual_active_95pct": [
+            -0.03585367623335214,
+            0.14726163588345917
+          ],
+          "mean_one_way_turnover": 0.007864768583816741,
+          "cost_cny": 673088.2919595472,
+          "cost_daily_nav_bps": 0.13374789322217434,
+          "cumulative_cost_nav_bps": 15.648503506994398,
+          "writeoff_cny": 18401.10477046596,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 2.5974712037870165e-15,
+          "blocked_value_daily_nav_bps": 14.78612850322082,
+          "cash_cut_value_daily_nav_bps": 13.52516914514184
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.08171876991388435,
+          "annual_active_difference_95pct": [
+            -0.03475961345191963,
+            0.1661741504816245
+          ],
+          "cumulative_relative_return": 0.04067643486540207
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.009019161368973832,
+          "annual_active_difference_95pct": [
+            -0.0008318256052934211,
+            0.018507759559532756
+          ],
+          "cumulative_relative_return": 0.004365149175212357
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.0033688808103639997,
+          "annual_active_difference_95pct": [
+            -0.003962253480267972,
+            -0.0026625188372369946
+          ],
+          "cumulative_relative_return": -0.001563773372577737
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": -0.004177808830419747,
+          "annual_active_difference_95pct": [
+            -0.009485006139540578,
+            0.0026567916531839704
+          ],
+          "cumulative_relative_return": -0.0021054062238083926
+        }
+      }
+    }
+  },
+  "half_year": {
+    "2019H2": {
+      "opening_close": "2019-06-28",
+      "first_trade": "2019-07-01",
+      "last_trade": "2019-12-31",
+      "days": 126,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": 0.04783857182869844,
+          "benchmark_cumulative_return": 0.0489466789500419,
+          "cumulative_return_difference": -0.0011081071213434601,
+          "cumulative_relative_return": -0.0010563998567140187,
+          "annualized_strategy_return": 0.0979656726120064,
+          "annualized_benchmark_return": 0.10028913528032235,
+          "annualized_relative_return": -0.0021116837327708193,
+          "annual_active": -0.003995004946963698,
+          "tracking_error": 0.033275458622162496,
+          "information_ratio": -0.12005859911132524,
+          "strategy_max_drawdown": -0.11067902270925212,
+          "benchmark_max_drawdown": -0.11020534603857646,
+          "relative_max_drawdown": -0.01992101493341747,
+          "annual_active_95pct": [
+            -0.023577463989302428,
+            0.10548928718484422
+          ],
+          "mean_one_way_turnover": 0.02460285558424721,
+          "cost_cny": 48809.23516136295,
+          "cost_daily_nav_bps": 0.39060814917493364,
+          "cumulative_cost_nav_bps": 49.21662679604164,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 6.207913562173729,
+          "cash_cut_value_daily_nav_bps": 6.490067906866299
+        },
+        "passive": {
+          "strategy_cumulative_return": 0.027411782868297374,
+          "benchmark_cumulative_return": 0.0489466789500419,
+          "cumulative_return_difference": -0.021534896081744526,
+          "cumulative_relative_return": -0.02053001979404734,
+          "annualized_strategy_return": 0.0555749715766134,
+          "annualized_benchmark_return": 0.10028913528032235,
+          "annualized_relative_return": -0.040638557875350756,
+          "annual_active": -0.04223919728022163,
+          "tracking_error": 0.02693500951217396,
+          "information_ratio": -1.568189432460774,
+          "strategy_max_drawdown": -0.11067902270925212,
+          "benchmark_max_drawdown": -0.11020534603857646,
+          "relative_max_drawdown": -0.020731844487401063,
+          "annual_active_95pct": [
+            -0.041437417797995646,
+            -0.0005525232321388579
+          ],
+          "mean_one_way_turnover": 0.015320938383048622,
+          "cost_cny": 28872.517666424046,
+          "cost_daily_nav_bps": 0.23276024450771235,
+          "cumulative_cost_nav_bps": 29.327790807971756,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 0.3127926944190113,
+          "blocked_value_daily_nav_bps": 2.8575559273919118,
+          "cash_cut_value_daily_nav_bps": 2.8780910224041723
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": 0.045586798505907744,
+          "benchmark_cumulative_return": 0.0489466789500419,
+          "cumulative_return_difference": -0.0033598804441341557,
+          "cumulative_relative_return": -0.0032030993677364394,
+          "annualized_strategy_return": 0.09325175320983381,
+          "annualized_benchmark_return": 0.10028913528032235,
+          "annualized_relative_return": -0.0063959388899133,
+          "annual_active": -0.008183432596252427,
+          "tracking_error": 0.03248304701323307,
+          "information_ratio": -0.25192934003139017,
+          "strategy_max_drawdown": -0.11067902270925212,
+          "benchmark_max_drawdown": -0.11020534603857646,
+          "relative_max_drawdown": -0.019793981080030276,
+          "annual_active_95pct": [
+            -0.02535448699938889,
+            0.09439768167882588
+          ],
+          "mean_one_way_turnover": 0.02355393604800274,
+          "cost_cny": 46554.33640331944,
+          "cost_daily_nav_bps": 0.3727697882371181,
+          "cumulative_cost_nav_bps": 46.96899331787688,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 0.18071047747852778,
+          "blocked_value_daily_nav_bps": 6.470645375302235,
+          "cash_cut_value_daily_nav_bps": 6.390562867429519
+        },
+        "double_fees": {
+          "strategy_cumulative_return": 0.04269118593830723,
+          "benchmark_cumulative_return": 0.0489466789500419,
+          "cumulative_return_difference": -0.00625549301173467,
+          "cumulative_relative_return": -0.00596359484925979,
+          "annualized_strategy_return": 0.08720490923343349,
+          "annualized_benchmark_return": 0.10028913528032235,
+          "annualized_relative_return": -0.01189162523499343,
+          "annual_active": -0.0138673991249878,
+          "tracking_error": 0.03385811645231246,
+          "information_ratio": -0.409573850468598,
+          "strategy_max_drawdown": -0.11109764709565906,
+          "benchmark_max_drawdown": -0.11020534603857646,
+          "relative_max_drawdown": -0.02195694583999519,
+          "annual_active_95pct": [
+            -0.0328991282955169,
+            0.0961442283817516
+          ],
+          "mean_one_way_turnover": 0.024593387458171717,
+          "cost_cny": 97376.3260229095,
+          "cost_daily_nav_bps": 0.7811676934872401,
+          "cumulative_cost_nav_bps": 98.42712937939226,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 6.218250703210549,
+          "cash_cut_value_daily_nav_bps": 6.82624139558921
+        },
+        "capacity": {
+          "strategy_cumulative_return": 0.042145698595200676,
+          "benchmark_cumulative_return": 0.0489466789500419,
+          "cumulative_return_difference": -0.006800980354841224,
+          "cumulative_relative_return": -0.0064836282828492076,
+          "annualized_strategy_return": 0.08606765710047881,
+          "annualized_benchmark_return": 0.10028913528032235,
+          "annualized_relative_return": -0.01292521912998823,
+          "annual_active": -0.014863252334613053,
+          "tracking_error": 0.03704018057049143,
+          "information_ratio": -0.4012737547627958,
+          "strategy_max_drawdown": -0.11031639477849464,
+          "benchmark_max_drawdown": -0.11020534603857646,
+          "relative_max_drawdown": -0.023237972767607973,
+          "annual_active_95pct": [
+            -0.0278839389550251,
+            0.09761041207090734
+          ],
+          "mean_one_way_turnover": 0.02168506036051242,
+          "cost_cny": 1273400.9173948197,
+          "cost_daily_nav_bps": 0.3410435201868693,
+          "cumulative_cost_nav_bps": 42.97148354354553,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 50.16920945462515,
+          "blocked_value_daily_nav_bps": 5.4464892740819755,
+          "cash_cut_value_daily_nav_bps": 4.723243379097956
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.038244192333259486,
+          "annual_active_difference_95pct": [
+            -0.010155302222924305,
+            0.10873883805209515
+          ],
+          "cumulative_relative_return": 0.01988179355250752
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.004188427649290061,
+          "annual_active_difference_95pct": [
+            -0.0024629031215621044,
+            0.014237399539458072
+          ],
+          "cumulative_relative_return": 0.002153597698448806
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.009872394178027433,
+          "annual_active_difference_95pct": [
+            -0.011836230412095507,
+            -0.005607450773277217
+          ],
+          "cumulative_relative_return": -0.004912384434758832
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": -0.010868247387648688,
+          "annual_active_difference_95pct": [
+            -0.011181948775571935,
+            0.0013445023496248946
+          ],
+          "cumulative_relative_return": -0.005432967812553868
+        }
+      }
+    },
+    "2020H1": {
+      "opening_close": "2019-12-31",
+      "first_trade": "2020-01-02",
+      "last_trade": "2020-06-30",
+      "days": 117,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": 0.23060906865126318,
+          "benchmark_cumulative_return": 0.14259990060237482,
+          "cumulative_return_difference": 0.08800916804888836,
+          "cumulative_relative_return": 0.07702535944777367,
+          "annualized_strategy_return": 0.5635250902392872,
+          "annualized_benchmark_return": 0.33258573858480167,
+          "annualized_relative_return": 0.17330168331213103,
+          "annual_active": 0.15898523003359122,
+          "tracking_error": 0.03524485005798639,
+          "information_ratio": 4.510878320436083,
+          "strategy_max_drawdown": -0.14683865265650675,
+          "benchmark_max_drawdown": -0.15661473826580807,
+          "relative_max_drawdown": -0.011890990948922653,
+          "annual_active_95pct": [
+            0.06609376375546439,
+            0.2508448850618421
+          ],
+          "mean_one_way_turnover": 0.02017850944031405,
+          "cost_cny": 45769.61898489159,
+          "cost_daily_nav_bps": 0.34315502247720653,
+          "cumulative_cost_nav_bps": 40.14913762983316,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 19.633911315912613,
+          "cash_cut_value_daily_nav_bps": 14.431552833537276
+        },
+        "passive": {
+          "strategy_cumulative_return": 0.13537109042750917,
+          "benchmark_cumulative_return": 0.14259990060237482,
+          "cumulative_return_difference": -0.007228810174865652,
+          "cumulative_relative_return": -0.006326632945665933,
+          "annualized_strategy_return": 0.31449339072795457,
+          "annualized_benchmark_return": 0.33258573858480167,
+          "annualized_relative_return": -0.013576873392072364,
+          "annual_active": -0.013720312530316435,
+          "tracking_error": 0.003969659607201887,
+          "information_ratio": -3.456294465506461,
+          "strategy_max_drawdown": -0.15657777183052024,
+          "benchmark_max_drawdown": -0.15661473826580807,
+          "relative_max_drawdown": -0.006538975580359652,
+          "annual_active_95pct": [
+            -0.021201169362401358,
+            -0.003185551327676519
+          ],
+          "mean_one_way_turnover": 0.014232397428306811,
+          "cost_cny": 30566.461130792715,
+          "cost_daily_nav_bps": 0.2420354686952592,
+          "cumulative_cost_nav_bps": 28.318149837345324,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 0.45617211690535187,
+          "blocked_value_daily_nav_bps": 23.871037520436442,
+          "cash_cut_value_daily_nav_bps": 22.13551977205303
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": 0.22596748998002258,
+          "benchmark_cumulative_return": 0.14259990060237482,
+          "cumulative_return_difference": 0.08336758937764777,
+          "cumulative_relative_return": 0.07296306374059425,
+          "annualized_strategy_return": 0.5508509281411327,
+          "annualized_benchmark_return": 0.33258573858480167,
+          "annualized_relative_return": 0.16379072898388292,
+          "annual_active": 0.15112655142023235,
+          "tracking_error": 0.03327011309878399,
+          "information_ratio": 4.542411712623723,
+          "strategy_max_drawdown": -0.1486904447276497,
+          "benchmark_max_drawdown": -0.15661473826580807,
+          "relative_max_drawdown": -0.011566762874606118,
+          "annual_active_95pct": [
+            0.0542816652822675,
+            0.24173077061893775
+          ],
+          "mean_one_way_turnover": 0.019215295328247412,
+          "cost_cny": 43443.406968435,
+          "cost_daily_nav_bps": 0.32677462917044303,
+          "cumulative_cost_nav_bps": 38.23263161294184,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 0.5249112520669592,
+          "blocked_value_daily_nav_bps": 19.152404744410987,
+          "cash_cut_value_daily_nav_bps": 14.386851377036335
+        },
+        "double_fees": {
+          "strategy_cumulative_return": 0.22570363822863193,
+          "benchmark_cumulative_return": 0.14259990060237482,
+          "cumulative_return_difference": 0.08310373762625711,
+          "cumulative_relative_return": 0.07273214148053486,
+          "annualized_strategy_return": 0.5501321219088444,
+          "annualized_benchmark_return": 0.33258573858480167,
+          "annualized_relative_return": 0.16325132186622038,
+          "annual_active": 0.15035488655717621,
+          "tracking_error": 0.03525660974160848,
+          "information_ratio": 4.264587198233449,
+          "strategy_max_drawdown": -0.14736069279357544,
+          "benchmark_max_drawdown": -0.15661473826580807,
+          "relative_max_drawdown": -0.012238872986991223,
+          "annual_active_95pct": [
+            0.05736833593231972,
+            0.2435568715652625
+          ],
+          "mean_one_way_turnover": 0.0201712886756779,
+          "cost_cny": 90904.61515215819,
+          "cost_daily_nav_bps": 0.6863047367027784,
+          "cumulative_cost_nav_bps": 80.29765419422507,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 19.698299117485714,
+          "cash_cut_value_daily_nav_bps": 14.815869109252786
+        },
+        "capacity": {
+          "strategy_cumulative_return": 0.2279650714501451,
+          "benchmark_cumulative_return": 0.14259990060237482,
+          "cumulative_return_difference": 0.08536517084777029,
+          "cumulative_relative_return": 0.07471134104139687,
+          "annualized_strategy_return": 0.5562986932533773,
+          "annualized_benchmark_return": 0.33258573858480167,
+          "annualized_relative_return": 0.16787884500862016,
+          "annual_active": 0.15444763680800516,
+          "tracking_error": 0.03507204776866473,
+          "information_ratio": 4.403724522353014,
+          "strategy_max_drawdown": -0.14722744734034787,
+          "benchmark_max_drawdown": -0.15661473826580807,
+          "relative_max_drawdown": -0.011941942179000464,
+          "annual_active_95pct": [
+            0.05869932978961221,
+            0.2476172398473085
+          ],
+          "mean_one_way_turnover": 0.01887848699047789,
+          "cost_cny": 1276514.3289950334,
+          "cost_daily_nav_bps": 0.3210470175849352,
+          "cumulative_cost_nav_bps": 37.562501057437416,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 0,
+          "capacity_cut_value_daily_nav_bps": 7.78223220791558e-15,
+          "blocked_value_daily_nav_bps": 13.991383306366007,
+          "cash_cut_value_daily_nav_bps": 10.220627350129373
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.17270554256390527,
+          "annual_active_difference_95pct": [
+            0.08070981291147411,
+            0.26171098202871834
+          ],
+          "cumulative_relative_return": 0.08388268736690607
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.007858678613357685,
+          "annual_active_difference_95pct": [
+            -0.0016193795460610224,
+            0.019817863765624274
+          ],
+          "cumulative_relative_return": 0.0037860536345184492
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.008630343476415721,
+          "annual_active_difference_95pct": [
+            -0.009735312206911175,
+            -0.006961796201828772
+          ],
+          "cumulative_relative_return": -0.003986180946973894
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": -0.004537593225585113,
+          "annual_active_difference_95pct": [
+            -0.010818094517642828,
+            -0.0014085964141996512
+          ],
+          "cumulative_relative_return": -0.0021485273174655095
+        }
+      }
+    },
+    "2020H2": {
+      "opening_close": "2020-06-30",
+      "first_trade": "2020-07-01",
+      "last_trade": "2020-12-31",
+      "days": 126,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": 0.08303414900474171,
+          "benchmark_cumulative_return": 0.054206213737969744,
+          "cumulative_return_difference": 0.028827935266771965,
+          "cumulative_relative_return": 0.027345632088958016,
+          "annualized_strategy_return": 0.17296296791042498,
+          "annualized_benchmark_return": 0.11135074108374599,
+          "annualized_relative_return": 0.05543904777226061,
+          "annual_active": 0.05094017524874839,
+          "tracking_error": 0.03757562689805776,
+          "information_ratio": 1.355670668834042,
+          "strategy_max_drawdown": -0.11492379270654507,
+          "benchmark_max_drawdown": -0.12830418574165026,
+          "relative_max_drawdown": -0.017894069462261353,
+          "annual_active_95pct": [
+            0.0009352278849644681,
+            0.16689506538337706
+          ],
+          "mean_one_way_turnover": 0.02015195265916062,
+          "cost_cny": 61918.611413575,
+          "cost_daily_nav_bps": 0.34270314130518725,
+          "cumulative_cost_nav_bps": 43.180595804453596,
+          "writeoff_cny": 1279.3129392674284,
+          "max_stale_closes": 98,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 31.40771079518202,
+          "cash_cut_value_daily_nav_bps": 30.455678900475892
+        },
+        "passive": {
+          "strategy_cumulative_return": 0.05770365329110794,
+          "benchmark_cumulative_return": 0.054206213737969744,
+          "cumulative_return_difference": 0.003497439553138193,
+          "cumulative_relative_return": 0.0033176047603979963,
+          "annualized_strategy_return": 0.1187370181853562,
+          "annualized_benchmark_return": 0.11135074108374599,
+          "annualized_relative_return": 0.006646216022142104,
+          "annual_active": 0.006290908254899197,
+          "tracking_error": 0.004384713645550146,
+          "information_ratio": 1.434736396362751,
+          "strategy_max_drawdown": -0.12529016941432747,
+          "benchmark_max_drawdown": -0.12830418574165026,
+          "relative_max_drawdown": -0.0035558832721380718,
+          "annual_active_95pct": [
+            -0.004052422201682176,
+            0.019638194329494728
+          ],
+          "mean_one_way_turnover": 0.010848100860629449,
+          "cost_cny": 29589.32448696627,
+          "cost_daily_nav_bps": 0.1844822834299011,
+          "cumulative_cost_nav_bps": 23.24476771216754,
+          "writeoff_cny": 1817.6445762087242,
+          "max_stale_closes": 98,
+          "capacity_cut_value_daily_nav_bps": 2.9133730871782104,
+          "blocked_value_daily_nav_bps": 93.27625958685614,
+          "cash_cut_value_daily_nav_bps": 94.59998488994914
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": 0.07825498881720216,
+          "benchmark_cumulative_return": 0.054206213737969744,
+          "cumulative_return_difference": 0.02404877507923242,
+          "cumulative_relative_return": 0.022812211468533405,
+          "annualized_strategy_return": 0.16263382090918466,
+          "annualized_benchmark_return": 0.11135074108374599,
+          "annualized_relative_return": 0.04614481992915187,
+          "annual_active": 0.04251134663288991,
+          "tracking_error": 0.036197934819124235,
+          "information_ratio": 1.1744135914193135,
+          "strategy_max_drawdown": -0.11724056468131827,
+          "benchmark_max_drawdown": -0.12830418574165026,
+          "relative_max_drawdown": -0.01711432472007779,
+          "annual_active_95pct": [
+            0.0010560998024247317,
+            0.14112303384622224
+          ],
+          "mean_one_way_turnover": 0.019106311266387486,
+          "cost_cny": 58124.3049336632,
+          "cost_daily_nav_bps": 0.3249210138834464,
+          "cumulative_cost_nav_bps": 40.940047749314246,
+          "writeoff_cny": 1548.6076471952017,
+          "max_stale_closes": 98,
+          "capacity_cut_value_daily_nav_bps": 0.6757120012547924,
+          "blocked_value_daily_nav_bps": 35.73320437788759,
+          "cash_cut_value_daily_nav_bps": 35.434948814328905
+        },
+        "double_fees": {
+          "strategy_cumulative_return": 0.07839882695070477,
+          "benchmark_cumulative_return": 0.054206213737969744,
+          "cumulative_return_difference": 0.024192613212735026,
+          "cumulative_relative_return": 0.02294865359117315,
+          "annualized_strategy_return": 0.1629440299686562,
+          "annualized_benchmark_return": 0.11135074108374599,
+          "annualized_relative_return": 0.046423947883994066,
+          "annual_active": 0.042354992341675946,
+          "tracking_error": 0.03756343892603059,
+          "information_ratio": 1.1275589656495726,
+          "strategy_max_drawdown": -0.11757273386940248,
+          "benchmark_max_drawdown": -0.12830418574165026,
+          "relative_max_drawdown": -0.018200722151374804,
+          "annual_active_95pct": [
+            -0.006839524912963729,
+            0.15718028595785075
+          ],
+          "mean_one_way_turnover": 0.020142939681061445,
+          "cost_cny": 122465.67408197769,
+          "cost_daily_nav_bps": 0.6853396869369446,
+          "cumulative_cost_nav_bps": 86.35280055405502,
+          "writeoff_cny": 1270.2687793651269,
+          "max_stale_closes": 98,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 31.571472055694663,
+          "cash_cut_value_daily_nav_bps": 30.961563615206654
+        },
+        "capacity": {
+          "strategy_cumulative_return": 0.08158408432096653,
+          "benchmark_cumulative_return": 0.054206213737969744,
+          "cumulative_return_difference": 0.02737787058299679,
+          "cumulative_relative_return": 0.025970128259746428,
+          "annualized_strategy_return": 0.16982413145642372,
+          "annualized_benchmark_return": 0.11135074108374599,
+          "annualized_relative_return": 0.05261470408132052,
+          "annual_active": 0.048313057996055786,
+          "tracking_error": 0.03785893268083428,
+          "information_ratio": 1.276133651293181,
+          "strategy_max_drawdown": -0.11622975063569807,
+          "benchmark_max_drawdown": -0.12830418574165026,
+          "relative_max_drawdown": -0.018138758753156736,
+          "annual_active_95pct": [
+            -0.0030253415091157304,
+            0.16603891218669717
+          ],
+          "mean_one_way_turnover": 0.01893259897271539,
+          "cost_cny": 1731907.5195995232,
+          "cost_daily_nav_bps": 0.32196697657350204,
+          "cumulative_cost_nav_bps": 40.567839048261256,
+          "writeoff_cny": 40274.69500250073,
+          "max_stale_closes": 98,
+          "capacity_cut_value_daily_nav_bps": 8.74310404839635e-15,
+          "blocked_value_daily_nav_bps": 19.96222309692209,
+          "cash_cut_value_daily_nav_bps": 19.52285870359497
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.04464926699385252,
+          "annual_active_difference_95pct": [
+            0.002059740938360061,
+            0.15160031087323544
+          ],
+          "cumulative_relative_return": 0.02394857542073936
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.00842882861585692,
+          "annual_active_difference_95pct": [
+            -0.0010287453045663309,
+            0.027418461581887692
+          ],
+          "cumulative_relative_return": 0.004432309831259751
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.00858518290707444,
+          "annual_active_difference_95pct": [
+            -0.009458381298906082,
+            -0.007615154724631867
+          ],
+          "cumulative_relative_return": -0.004279940811004357
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": -0.0026271172526934894,
+          "annual_active_difference_95pct": [
+            -0.006897687665231039,
+            0.0015929873849425725
+          ],
+          "cumulative_relative_return": -0.0013388910082916539
+        }
+      }
+    },
+    "2021H1": {
+      "opening_close": "2020-12-31",
+      "first_trade": "2021-01-04",
+      "last_trade": "2021-06-30",
+      "days": 118,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": 0.09955514892247863,
+          "benchmark_cumulative_return": 0.07302131271795287,
+          "cumulative_return_difference": 0.026533836204525763,
+          "cumulative_relative_return": 0.024728153942549236,
+          "annualized_strategy_return": 0.22468043886447697,
+          "annualized_benchmark_return": 0.16243045797223132,
+          "annualized_relative_return": 0.053551574174024896,
+          "annual_active": 0.04956379658003458,
+          "tracking_error": 0.031218462839872774,
+          "information_ratio": 1.587643723339601,
+          "strategy_max_drawdown": -0.08638281776981305,
+          "benchmark_max_drawdown": -0.11195699493189637,
+          "relative_max_drawdown": -0.02911688664468437,
+          "annual_active_95pct": [
+            -0.08835556531897933,
+            0.21859882613485782
+          ],
+          "mean_one_way_turnover": 0.016649958877831116,
+          "cost_cny": 47161.377143270714,
+          "cost_daily_nav_bps": 0.28314840286413134,
+          "cumulative_cost_nav_bps": 33.4115115379675,
+          "writeoff_cny": 793.5217741929695,
+          "max_stale_closes": 216,
+          "capacity_cut_value_daily_nav_bps": 2.369009766706773e-19,
+          "blocked_value_daily_nav_bps": 45.641966118541625,
+          "cash_cut_value_daily_nav_bps": 45.59250652580897
+        },
+        "passive": {
+          "strategy_cumulative_return": 0.07693754558302657,
+          "benchmark_cumulative_return": 0.07302131271795287,
+          "cumulative_return_difference": 0.003916232865073699,
+          "cumulative_relative_return": 0.003649725143999083,
+          "annualized_strategy_return": 0.17150960145943928,
+          "annualized_benchmark_return": 0.16243045797223132,
+          "annualized_relative_return": 0.007810483134660373,
+          "annual_active": 0.007597493511241384,
+          "tracking_error": 0.004344433951675586,
+          "information_ratio": 1.7487878963636077,
+          "strategy_max_drawdown": -0.1113424153715693,
+          "benchmark_max_drawdown": -0.11195699493189637,
+          "relative_max_drawdown": -0.0021636217419902515,
+          "annual_active_95pct": [
+            -0.00120582931849772,
+            0.02221728224320348
+          ],
+          "mean_one_way_turnover": 0.011147720332336374,
+          "cost_cny": 27218.753933325184,
+          "cost_daily_nav_bps": 0.18957759780895145,
+          "cumulative_cost_nav_bps": 22.37015654145627,
+          "writeoff_cny": 4671.3223948126315,
+          "max_stale_closes": 216,
+          "capacity_cut_value_daily_nav_bps": 3.6456548976414247,
+          "blocked_value_daily_nav_bps": 121.45469683544967,
+          "cash_cut_value_daily_nav_bps": 123.388523756118
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": 0.09009610329255158,
+          "benchmark_cumulative_return": 0.07302131271795287,
+          "cumulative_return_difference": 0.01707479057459871,
+          "cumulative_relative_return": 0.015912815870682495,
+          "annualized_strategy_return": 0.20229085998068963,
+          "annualized_benchmark_return": 0.16243045797223132,
+          "annualized_relative_return": 0.03429056915627604,
+          "annual_active": 0.03149122289346983,
+          "tracking_error": 0.029139347172459123,
+          "information_ratio": 1.080711338764431,
+          "strategy_max_drawdown": -0.08703286923369769,
+          "benchmark_max_drawdown": -0.11195699493189637,
+          "relative_max_drawdown": -0.03096029512127263,
+          "annual_active_95pct": [
+            -0.10297377230721241,
+            0.19369181438885094
+          ],
+          "mean_one_way_turnover": 0.015488858350945343,
+          "cost_cny": 43240.394068592155,
+          "cost_daily_nav_bps": 0.26340278294009983,
+          "cumulative_cost_nav_bps": 31.08152838693178,
+          "writeoff_cny": 493.83340792178603,
+          "max_stale_closes": 216,
+          "capacity_cut_value_daily_nav_bps": 0.8319611896486928,
+          "blocked_value_daily_nav_bps": 53.67013869480646,
+          "cash_cut_value_daily_nav_bps": 54.387643055311536
+        },
+        "double_fees": {
+          "strategy_cumulative_return": 0.09590617321803707,
+          "benchmark_cumulative_return": 0.07302131271795287,
+          "cumulative_return_difference": 0.022884860500084203,
+          "cumulative_relative_return": 0.021327498558362246,
+          "annualized_strategy_return": 0.21601727985021846,
+          "annualized_benchmark_return": 0.16243045797223132,
+          "annualized_relative_return": 0.04609894855255692,
+          "annual_active": 0.042457161499325,
+          "tracking_error": 0.031258518814711554,
+          "information_ratio": 1.3582589037885857,
+          "strategy_max_drawdown": -0.08695799649564284,
+          "benchmark_max_drawdown": -0.11195699493189637,
+          "relative_max_drawdown": -0.030695235369764484,
+          "annual_active_95pct": [
+            -0.09535826607663324,
+            0.21142059384729134
+          ],
+          "mean_one_way_turnover": 0.01664047069092769,
+          "cost_cny": 92910.18521791491,
+          "cost_daily_nav_bps": 0.5661723241184244,
+          "cumulative_cost_nav_bps": 66.80833424597408,
+          "writeoff_cny": 788.8296547875441,
+          "max_stale_closes": 216,
+          "capacity_cut_value_daily_nav_bps": 1.739263874224802e-19,
+          "blocked_value_daily_nav_bps": 45.93125220530817,
+          "cash_cut_value_daily_nav_bps": 46.16493964378977
+        },
+        "capacity": {
+          "strategy_cumulative_return": 0.09964428995783092,
+          "benchmark_cumulative_return": 0.07302131271795287,
+          "cumulative_return_difference": 0.026622977239878054,
+          "cumulative_relative_return": 0.024811228746652203,
+          "annualized_strategy_return": 0.2248924808991173,
+          "annualized_benchmark_return": 0.16243045797223132,
+          "annualized_relative_return": 0.05373398683637931,
+          "annual_active": 0.04998151865821142,
+          "tracking_error": 0.029550242839478137,
+          "information_ratio": 1.6914080513557668,
+          "strategy_max_drawdown": -0.0861106584940553,
+          "benchmark_max_drawdown": -0.11195699493189637,
+          "relative_max_drawdown": -0.026788847518182224,
+          "annual_active_95pct": [
+            -0.08087604134988215,
+            0.20812642357590305
+          ],
+          "mean_one_way_turnover": 0.015062739196434187,
+          "cost_cny": 1269178.3369679952,
+          "cost_daily_nav_bps": 0.2561562210167371,
+          "cumulative_cost_nav_bps": 30.226434079974972,
+          "writeoff_cny": 27281.84894973392,
+          "max_stale_closes": 216,
+          "capacity_cut_value_daily_nav_bps": 1.1117779292166117e-14,
+          "blocked_value_daily_nav_bps": 30.472216964832636,
+          "cash_cut_value_daily_nav_bps": 30.53822798853171
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.04196630306879557,
+          "annual_active_difference_95pct": [
+            -0.10057411934484775,
+            0.21098483645711727
+          ],
+          "cumulative_relative_return": 0.021001778081018996
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.018072573686565223,
+          "annual_active_difference_95pct": [
+            0.008783178358774686,
+            0.03432374670026076
+          ],
+          "cumulative_relative_return": 0.008677258455797254
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.0071066350807114775,
+          "annual_active_difference_95pct": [
+            -0.007392705434438219,
+            -0.006798777990528118
+          ],
+          "cumulative_relative_return": -0.0033185927127141746
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": 0.00041772207817802507,
+          "annual_active_difference_95pct": [
+            -0.013761254472260539,
+            0.009634157202580275
+          ],
+          "cumulative_relative_return": 8.107009042657154e-05
+        }
+      }
+    },
+    "2021H2": {
+      "opening_close": "2021-06-30",
+      "first_trade": "2021-07-01",
+      "last_trade": "2021-12-31",
+      "days": 125,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": 0.15613619288563085,
+          "benchmark_cumulative_return": 0.1333486871973426,
+          "cumulative_return_difference": 0.022787505688288245,
+          "cumulative_relative_return": 0.020106350274812224,
+          "annualized_strategy_return": 0.339757318128294,
+          "annualized_benchmark_return": 0.28705441449465874,
+          "annualized_relative_return": 0.04094846576811473,
+          "annual_active": 0.039660620149638164,
+          "tracking_error": 0.031149889844397424,
+          "information_ratio": 1.2732186324816641,
+          "strategy_max_drawdown": -0.10090745364166442,
+          "benchmark_max_drawdown": -0.09691345289950493,
+          "relative_max_drawdown": -0.010816329325585294,
+          "annual_active_95pct": [
+            -0.02673084627045551,
+            0.0915431580867152
+          ],
+          "mean_one_way_turnover": 0.01704377324572645,
+          "cost_cny": 60761.21863965736,
+          "cost_daily_nav_bps": 0.28984559113424657,
+          "cumulative_cost_nav_bps": 36.23069889178082,
+          "writeoff_cny": 110.79645958969945,
+          "max_stale_closes": 341,
+          "capacity_cut_value_daily_nav_bps": 1.3715081930043889e-17,
+          "blocked_value_daily_nav_bps": 64.29921297234745,
+          "cash_cut_value_daily_nav_bps": 64.27777401719169
+        },
+        "passive": {
+          "strategy_cumulative_return": 0.13406398620943838,
+          "benchmark_cumulative_return": 0.1333486871973426,
+          "cumulative_return_difference": 0.0007152990120957714,
+          "cumulative_relative_return": 0.0006311376367891253,
+          "annualized_strategy_return": 0.28869255344365863,
+          "annualized_benchmark_return": 0.28705441449465874,
+          "annualized_relative_return": 0.0012727814228763457,
+          "annual_active": 0.0011214232610622047,
+          "tracking_error": 0.0050303472253525015,
+          "information_ratio": 0.22293158122571172,
+          "strategy_max_drawdown": -0.09727599917936713,
+          "benchmark_max_drawdown": -0.09691345289950493,
+          "relative_max_drawdown": -0.0031055663710439774,
+          "annual_active_95pct": [
+            -0.011031805183806597,
+            0.018746947679529453
+          ],
+          "mean_one_way_turnover": 0.013646273933206625,
+          "cost_cny": 41392.143788081645,
+          "cost_daily_nav_bps": 0.23206788062273054,
+          "cumulative_cost_nav_bps": 29.008485077841318,
+          "writeoff_cny": 416.9178003290651,
+          "max_stale_closes": 341,
+          "capacity_cut_value_daily_nav_bps": 0.547558312775192,
+          "blocked_value_daily_nav_bps": 105.39147957375758,
+          "cash_cut_value_daily_nav_bps": 105.59789850831915
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": 0.14936140199310932,
+          "benchmark_cumulative_return": 0.1333486871973426,
+          "cumulative_return_difference": 0.016012714795766714,
+          "cumulative_relative_return": 0.014128674587663426,
+          "annualized_strategy_return": 0.32397725029971713,
+          "annualized_benchmark_return": 0.28705441449465874,
+          "annualized_relative_return": 0.02868785918391481,
+          "annual_active": 0.02834246921577452,
+          "tracking_error": 0.032168449504560215,
+          "information_ratio": 0.8810641996207084,
+          "strategy_max_drawdown": -0.10198470638575308,
+          "benchmark_max_drawdown": -0.09691345289950493,
+          "relative_max_drawdown": -0.013036652701009732,
+          "annual_active_95pct": [
+            -0.03652137396999968,
+            0.09176181745745396
+          ],
+          "mean_one_way_turnover": 0.016326557811997437,
+          "cost_cny": 56951.60468764769,
+          "cost_daily_nav_bps": 0.27764865983489856,
+          "cumulative_cost_nav_bps": 34.70608247936232,
+          "writeoff_cny": 46.38406173773343,
+          "max_stale_closes": 341,
+          "capacity_cut_value_daily_nav_bps": 0.5661220046886821,
+          "blocked_value_daily_nav_bps": 70.79646106135259,
+          "cash_cut_value_daily_nav_bps": 71.34463979614759
+        },
+        "double_fees": {
+          "strategy_cumulative_return": 0.15193258448492064,
+          "benchmark_cumulative_return": 0.1333486871973426,
+          "cumulative_return_difference": 0.018583897287578033,
+          "cumulative_relative_return": 0.016397334286885723,
+          "annualized_strategy_return": 0.329955039719672,
+          "annualized_benchmark_return": 0.28705441449465874,
+          "annualized_relative_return": 0.03333240983587893,
+          "annual_active": 0.0323099814825734,
+          "tracking_error": 0.0311051682229136,
+          "information_ratio": 1.0387335394242387,
+          "strategy_max_drawdown": -0.10114158581623345,
+          "benchmark_max_drawdown": -0.09691345289950493,
+          "relative_max_drawdown": -0.011259396850272663,
+          "annual_active_95pct": [
+            -0.0340268538229102,
+            0.08389684300124457
+          ],
+          "mean_one_way_turnover": 0.017033760038631777,
+          "cost_cny": 119283.19884668442,
+          "cost_daily_nav_bps": 0.5795535287836289,
+          "cumulative_cost_nav_bps": 72.4441910979536,
+          "writeoff_cny": 109.83660582238437,
+          "max_stale_closes": 341,
+          "capacity_cut_value_daily_nav_bps": 2.5699866363888723e-18,
+          "blocked_value_daily_nav_bps": 64.6199225096556,
+          "cash_cut_value_daily_nav_bps": 64.88833469509727
+        },
+        "capacity": {
+          "strategy_cumulative_return": 0.15985187729890726,
+          "benchmark_cumulative_return": 0.1333486871973426,
+          "cumulative_return_difference": 0.026503190101564655,
+          "cumulative_relative_return": 0.023384850929773826,
+          "annualized_strategy_return": 0.34845202559869026,
+          "annualized_benchmark_return": 0.28705441449465874,
+          "annualized_relative_return": 0.0477039746047867,
+          "annual_active": 0.04633694396928443,
+          "tracking_error": 0.03022455243385661,
+          "information_ratio": 1.5330894996936073,
+          "strategy_max_drawdown": -0.10039743107503463,
+          "benchmark_max_drawdown": -0.09691345289950493,
+          "relative_max_drawdown": -0.010882313207244754,
+          "annual_active_95pct": [
+            -0.021370970938960798,
+            0.09586275728102173
+          ],
+          "mean_one_way_turnover": 0.01646555741313357,
+          "cost_cny": 1748690.7822559068,
+          "cost_daily_nav_bps": 0.2800124803914077,
+          "cumulative_cost_nav_bps": 35.00156004892596,
+          "writeoff_cny": 3737.375731567126,
+          "max_stale_closes": 341,
+          "capacity_cut_value_daily_nav_bps": 7.999411943120067e-15,
+          "blocked_value_daily_nav_bps": 26.367786867708855,
+          "cash_cut_value_daily_nav_bps": 26.391958748251014
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.03853919688857708,
+          "annual_active_difference_95pct": [
+            -0.027971392500411342,
+            0.08768753404028241
+          ],
+          "cumulative_relative_return": 0.01946292885110279
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.011318150933862303,
+          "annual_active_difference_95pct": [
+            -0.01566680939905255,
+            0.01860746135234654
+          ],
+          "cumulative_relative_return": 0.005894395688574194
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.007350638667063649,
+          "annual_active_difference_95pct": [
+            -0.008379017146476687,
+            -0.006583795474255951
+          ],
+          "cumulative_relative_return": -0.0036359110860618715
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": 0.006676323819646484,
+          "annual_active_difference_95pct": [
+            -0.0006971441305481767,
+            0.012618356660678958
+          ],
+          "cumulative_relative_return": 0.003213881233146365
+        }
+      }
+    },
+    "2022H1": {
+      "opening_close": "2021-12-31",
+      "first_trade": "2022-01-04",
+      "last_trade": "2022-06-30",
+      "days": 117,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": -0.10207440627199438,
+          "benchmark_cumulative_return": -0.1198236204850961,
+          "cumulative_return_difference": 0.017749214213101716,
+          "cumulative_relative_return": 0.020165519805114496,
+          "annualized_strategy_return": -0.2069749448932765,
+          "annualized_benchmark_return": -0.24035325327856283,
+          "annualized_relative_return": 0.0439392500913669,
+          "annual_active": 0.04192768265585782,
+          "tracking_error": 0.020774301341768414,
+          "information_ratio": 2.0182475437361074,
+          "strategy_max_drawdown": -0.32926285497762386,
+          "benchmark_max_drawdown": -0.34236015492257,
+          "relative_max_drawdown": -0.01301418741758753,
+          "annual_active_95pct": [
+            -0.02210725438381579,
+            0.13938823923467894
+          ],
+          "mean_one_way_turnover": 0.012973161707843118,
+          "cost_cny": 38999.071906302954,
+          "cost_daily_nav_bps": 0.220620966371563,
+          "cumulative_cost_nav_bps": 25.812653065472873,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 458,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 62.12292730337003,
+          "cash_cut_value_daily_nav_bps": 62.20531427716564
+        },
+        "passive": {
+          "strategy_cumulative_return": -0.11700545063954171,
+          "benchmark_cumulative_return": -0.1198236204850961,
+          "cumulative_return_difference": 0.0028181698455543858,
+          "cumulative_relative_return": 0.0032018239879461063,
+          "annualized_strategy_return": -0.23510487126945345,
+          "annualized_benchmark_return": -0.24035325327856283,
+          "annualized_relative_return": 0.006908977142021433,
+          "annual_active": 0.006741392797474091,
+          "tracking_error": 0.003691420881526366,
+          "information_ratio": 1.8262325033732245,
+          "strategy_max_drawdown": -0.34161470772117997,
+          "benchmark_max_drawdown": -0.34236015492257,
+          "relative_max_drawdown": -0.00132234089615213,
+          "annual_active_95pct": [
+            -0.0018447969690394553,
+            0.012730894120975937
+          ],
+          "mean_one_way_turnover": 0.010784736691840794,
+          "cost_cny": 27352.457037070682,
+          "cost_daily_nav_bps": 0.1834047154116876,
+          "cumulative_cost_nav_bps": 21.458351703167448,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 458,
+          "capacity_cut_value_daily_nav_bps": 1.1439359073394653,
+          "blocked_value_daily_nav_bps": 109.99808673528034,
+          "cash_cut_value_daily_nav_bps": 110.10753680533963
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": -0.10764978340833276,
+          "benchmark_cumulative_return": -0.1198236204850961,
+          "cumulative_return_difference": 0.012173837076763339,
+          "cumulative_relative_return": 0.013831133577423271,
+          "annualized_strategy_return": -0.21754257138567856,
+          "annualized_benchmark_return": -0.24035325327856283,
+          "annualized_relative_return": 0.03002801235091601,
+          "annual_active": 0.02899515863191113,
+          "tracking_error": 0.020616097710249266,
+          "information_ratio": 1.406432926319331,
+          "strategy_max_drawdown": -0.3330623844174895,
+          "benchmark_max_drawdown": -0.34236015492257,
+          "relative_max_drawdown": -0.014813561830224753,
+          "annual_active_95pct": [
+            -0.033107530157880045,
+            0.12735164668073728
+          ],
+          "mean_one_way_turnover": 0.012154665022821578,
+          "cost_cny": 35459.58288227935,
+          "cost_daily_nav_bps": 0.2067016509658048,
+          "cumulative_cost_nav_bps": 24.18409316299916,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 458,
+          "capacity_cut_value_daily_nav_bps": 0.295389233585643,
+          "blocked_value_daily_nav_bps": 68.01344366368225,
+          "cash_cut_value_daily_nav_bps": 68.38825862826207
+        },
+        "double_fees": {
+          "strategy_cumulative_return": -0.10439158807144999,
+          "benchmark_cumulative_return": -0.1198236204850961,
+          "cumulative_return_difference": 0.015432032413646102,
+          "cumulative_relative_return": 0.017532886331431907,
+          "annualized_strategy_return": -0.21137617799178765,
+          "annualized_benchmark_return": -0.24035325327856283,
+          "annualized_relative_return": 0.03814546091566573,
+          "annual_active": 0.03636302037418187,
+          "tracking_error": 0.020771338862443447,
+          "information_ratio": 1.7506344013254564,
+          "strategy_max_drawdown": -0.33019607010674124,
+          "benchmark_max_drawdown": -0.34236015492257,
+          "relative_max_drawdown": -0.013505891456027097,
+          "annual_active_95pct": [
+            -0.027255498646985447,
+            0.13425204505501542
+          ],
+          "mean_one_way_turnover": 0.012961520152477583,
+          "cost_cny": 76303.30608798469,
+          "cost_daily_nav_bps": 0.4410003854540556,
+          "cumulative_cost_nav_bps": 51.59704509812451,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 458,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 62.588124673004835,
+          "cash_cut_value_daily_nav_bps": 62.890556747559586
+        },
+        "capacity": {
+          "strategy_cumulative_return": -0.10213257872784076,
+          "benchmark_cumulative_return": -0.1198236204850961,
+          "cumulative_return_difference": 0.017691041757255332,
+          "cumulative_relative_return": 0.02009942798851916,
+          "annualized_strategy_return": -0.20708559769212598,
+          "annualized_benchmark_return": -0.24035325327856283,
+          "annualized_relative_return": 0.043793586598003476,
+          "annual_active": 0.042084102030796884,
+          "tracking_error": 0.020482950108615117,
+          "information_ratio": 2.054591834068684,
+          "strategy_max_drawdown": -0.32951555049675196,
+          "benchmark_max_drawdown": -0.34236015492257,
+          "relative_max_drawdown": -0.012071728114626423,
+          "annual_active_95pct": [
+            -0.01883700207282713,
+            0.14395794372919887
+          ],
+          "mean_one_way_turnover": 0.012832393104103298,
+          "cost_cny": 1151284.8322594773,
+          "cost_daily_nav_bps": 0.21822706224154062,
+          "cumulative_cost_nav_bps": 25.53256628226025,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 458,
+          "capacity_cut_value_daily_nav_bps": 5.9632447522027625e-15,
+          "blocked_value_daily_nav_bps": 25.670870325424527,
+          "cash_cut_value_daily_nav_bps": 25.841638478482384
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.0351862898583854,
+          "annual_active_difference_95pct": [
+            -0.028416810010542973,
+            0.1335294804043678
+          ],
+          "cumulative_relative_return": 0.016909554400264204
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.012932524023950518,
+          "annual_active_difference_95pct": [
+            0.0018988419521017205,
+            0.019763832546683967
+          ],
+          "cumulative_relative_return": 0.0062479697238531084
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.005564662281683362,
+          "annual_active_difference_95pct": [
+            -0.006276249712805574,
+            -0.004655622426442746
+          ],
+          "cumulative_relative_return": -0.002580594445287132
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": 0.00015641937493451674,
+          "annual_active_difference_95pct": [
+            -0.002190380955376019,
+            0.009280416541238954
+          ],
+          "cumulative_relative_return": -6.478538561849323e-05
+        }
+      }
+    },
+    "2022H2": {
+      "opening_close": "2022-06-30",
+      "first_trade": "2022-07-01",
+      "last_trade": "2022-12-30",
+      "days": 125,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": -0.033377293853850465,
+          "benchmark_cumulative_return": -0.09985363210610854,
+          "cumulative_return_difference": 0.06647633825225807,
+          "cumulative_relative_return": 0.0738505876636435,
+          "annualized_strategy_return": -0.06614790580526075,
+          "annualized_benchmark_return": -0.1910991774964491,
+          "annualized_relative_return": 0.15447044707466584,
+          "annual_active": 0.14110066311351496,
+          "tracking_error": 0.031815883672148035,
+          "information_ratio": 4.434912591695072,
+          "strategy_max_drawdown": -0.156669262524038,
+          "benchmark_max_drawdown": -0.1855854567650259,
+          "relative_max_drawdown": -0.008049168918967453,
+          "annual_active_95pct": [
+            0.08734299922956446,
+            0.21616810705998163
+          ],
+          "mean_one_way_turnover": 0.012586421607530736,
+          "cost_cny": 42457.58388378567,
+          "cost_daily_nav_bps": 0.21404408275698744,
+          "cumulative_cost_nav_bps": 26.75551034462343,
+          "writeoff_cny": 2275.5584251721552,
+          "max_stale_closes": 583,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 57.2397021813302,
+          "cash_cut_value_daily_nav_bps": 57.14501619627831
+        },
+        "passive": {
+          "strategy_cumulative_return": -0.09763229471102286,
+          "benchmark_cumulative_return": -0.09985363210610854,
+          "cumulative_return_difference": 0.0022213373950856763,
+          "cumulative_relative_return": 0.0024677513283568597,
+          "annualized_strategy_return": -0.187069861717317,
+          "annualized_benchmark_return": -0.1910991774964491,
+          "annualized_relative_return": 0.004981223491232756,
+          "annual_active": 0.004950837698589542,
+          "tracking_error": 0.0027466175647143567,
+          "information_ratio": 1.8025216769136987,
+          "strategy_max_drawdown": -0.18484689189971248,
+          "benchmark_max_drawdown": -0.1855854567650259,
+          "relative_max_drawdown": -0.0011083150474828773,
+          "annual_active_95pct": [
+            -0.0018453453237550397,
+            0.010657961695501516
+          ],
+          "mean_one_way_turnover": 0.010550253529619334,
+          "cost_cny": 28784.86599535162,
+          "cost_daily_nav_bps": 0.17941710599062535,
+          "cumulative_cost_nav_bps": 22.427138248828168,
+          "writeoff_cny": 6420.400701494708,
+          "max_stale_closes": 583,
+          "capacity_cut_value_daily_nav_bps": 1.6026471785575853,
+          "blocked_value_daily_nav_bps": 87.34573497498582,
+          "cash_cut_value_daily_nav_bps": 88.82020557997319
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": -0.040893355480279836,
+          "benchmark_cumulative_return": -0.09985363210610854,
+          "cumulative_return_difference": 0.0589602766258287,
+          "cumulative_relative_return": 0.06550076601850918,
+          "annualized_strategy_return": -0.0807287670166168,
+          "annualized_benchmark_return": -0.1910991774964491,
+          "annualized_relative_return": 0.13644492304784084,
+          "annual_active": 0.12563070106428997,
+          "tracking_error": 0.029231727610713406,
+          "information_ratio": 4.297751495818072,
+          "strategy_max_drawdown": -0.16005427602061317,
+          "benchmark_max_drawdown": -0.1855854567650259,
+          "relative_max_drawdown": -0.007134172013679163,
+          "annual_active_95pct": [
+            0.07771580018561892,
+            0.19202419143363195
+          ],
+          "mean_one_way_turnover": 0.011937278179992059,
+          "cost_cny": 38872.64320548437,
+          "cost_daily_nav_bps": 0.20300478073312153,
+          "cumulative_cost_nav_bps": 25.37559759164019,
+          "writeoff_cny": 3164.7049183954714,
+          "max_stale_closes": 583,
+          "capacity_cut_value_daily_nav_bps": 0.7644876108356059,
+          "blocked_value_daily_nav_bps": 58.742772025534435,
+          "cash_cut_value_daily_nav_bps": 59.393056851308764
+        },
+        "double_fees": {
+          "strategy_cumulative_return": -0.03594485731309027,
+          "benchmark_cumulative_return": -0.09985363210610854,
+          "cumulative_return_difference": 0.06390877479301826,
+          "cumulative_relative_return": 0.07099820326170758,
+          "annualized_strategy_return": -0.07114188135151311,
+          "annualized_benchmark_return": -0.1910991774964491,
+          "annualized_relative_return": 0.14829666728940616,
+          "annual_active": 0.1357382348140526,
+          "tracking_error": 0.03184378025838942,
+          "information_ratio": 4.262629427556472,
+          "strategy_max_drawdown": -0.15719232951027484,
+          "benchmark_max_drawdown": -0.1855854567650259,
+          "relative_max_drawdown": -0.008160295424948116,
+          "annual_active_95pct": [
+            0.08204331295204871,
+            0.2113908084992946
+          ],
+          "mean_one_way_turnover": 0.01257647989362588,
+          "cost_cny": 82859.4434703909,
+          "cost_daily_nav_bps": 0.4278998462756729,
+          "cumulative_cost_nav_bps": 53.487480784459116,
+          "writeoff_cny": 2250.3161787254126,
+          "max_stale_closes": 583,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 57.63892506883867,
+          "cash_cut_value_daily_nav_bps": 57.757380922257845
+        },
+        "capacity": {
+          "strategy_cumulative_return": -0.03422789340863508,
+          "benchmark_cumulative_return": -0.09985363210610854,
+          "cumulative_return_difference": 0.06562573869747346,
+          "cumulative_relative_return": 0.07290563072650125,
+          "annualized_strategy_return": -0.06780383819247104,
+          "annualized_benchmark_return": -0.1910991774964491,
+          "annualized_relative_return": 0.15242330811628846,
+          "annual_active": 0.13944273851015274,
+          "tracking_error": 0.030713120013014846,
+          "information_ratio": 4.540168450846516,
+          "strategy_max_drawdown": -0.15769407859935103,
+          "benchmark_max_drawdown": -0.1855854567650259,
+          "relative_max_drawdown": -0.007964574075479458,
+          "annual_active_95pct": [
+            0.08587289005682276,
+            0.20873442183654017
+          ],
+          "mean_one_way_turnover": 0.012553162916303326,
+          "cost_cny": 1261994.1228088385,
+          "cost_daily_nav_bps": 0.21347848704762323,
+          "cumulative_cost_nav_bps": 26.684810880952906,
+          "writeoff_cny": 65033.28062777854,
+          "max_stale_closes": 583,
+          "capacity_cut_value_daily_nav_bps": 5.985964225591722e-15,
+          "blocked_value_daily_nav_bps": 24.001513191279997,
+          "cash_cut_value_daily_nav_bps": 23.943298607833366
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.13614982541492499,
+          "annual_active_difference_95pct": [
+            0.08573410915433399,
+            0.20783592603855008
+          ],
+          "cumulative_relative_return": 0.07120711488294584
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.015469962049227447,
+          "annual_active_difference_95pct": [
+            0.006435351538102373,
+            0.02681143541071927
+          ],
+          "cumulative_relative_return": 0.007836523362001246
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.005362428299463275,
+          "annual_active_difference_95pct": [
+            -0.006197544412415664,
+            -0.004601851633636266
+          ],
+          "cumulative_relative_return": -0.002656220925614683
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": -0.00165792460336424,
+          "annual_active_difference_95pct": [
+            -0.009719277405605702,
+            0.002569501105346579
+          ],
+          "cumulative_relative_return": -0.0008799705918102196
+        }
+      }
+    },
+    "2023H1": {
+      "opening_close": "2022-12-30",
+      "first_trade": "2023-01-03",
+      "last_trade": "2023-06-30",
+      "days": 118,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": 0.08924145436905473,
+          "benchmark_cumulative_return": 0.059174392413033905,
+          "cumulative_return_difference": 0.030067061956020824,
+          "cumulative_relative_return": 0.02838726292043514,
+          "annualized_strategy_return": 0.20027872238728595,
+          "annualized_benchmark_return": 0.13062963503210012,
+          "annualized_relative_return": 0.061602035889682716,
+          "annual_active": 0.05854765155746053,
+          "tracking_error": 0.028809817239890415,
+          "information_ratio": 2.0322118349433596,
+          "strategy_max_drawdown": -0.07130234223547072,
+          "benchmark_max_drawdown": -0.0844962087824227,
+          "relative_max_drawdown": -0.012582029235116865,
+          "annual_active_95pct": [
+            -0.019942690286448524,
+            0.1451661950476883
+          ],
+          "mean_one_way_turnover": 0.012868972586688439,
+          "cost_cny": 43456.50456314748,
+          "cost_daily_nav_bps": 0.21884913116961283,
+          "cumulative_cost_nav_bps": 25.824197478014312,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 701,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 47.67424905044385,
+          "cash_cut_value_daily_nav_bps": 46.23799586548942
+        },
+        "passive": {
+          "strategy_cumulative_return": 0.05759803187097301,
+          "benchmark_cumulative_return": 0.059174392413033905,
+          "cumulative_return_difference": -0.001576360542060895,
+          "cumulative_relative_return": -0.0014882917802323536,
+          "annualized_strategy_return": 0.12703909435204142,
+          "annualized_benchmark_return": 0.13062963503210012,
+          "annualized_relative_return": -0.0031757001309775656,
+          "annual_active": -0.0032368664174512924,
+          "tracking_error": 0.0026895472928479187,
+          "information_ratio": -1.2034986059024924,
+          "strategy_max_drawdown": -0.08492800215315888,
+          "benchmark_max_drawdown": -0.0844962087824227,
+          "relative_max_drawdown": -0.001934461855703562,
+          "annual_active_95pct": [
+            -0.007180785535358489,
+            0.0010455117635873876
+          ],
+          "mean_one_way_turnover": 0.009951465422037724,
+          "cost_cny": 25652.384033231192,
+          "cost_daily_nav_bps": 0.16923414412508506,
+          "cumulative_cost_nav_bps": 19.969629006760037,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 701,
+          "capacity_cut_value_daily_nav_bps": 0.6272640368879125,
+          "blocked_value_daily_nav_bps": 68.81024701715111,
+          "cash_cut_value_daily_nav_bps": 68.71463642120025
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": 0.0888154854183556,
+          "benchmark_cumulative_return": 0.059174392413033905,
+          "cumulative_return_difference": 0.029641093005321695,
+          "cumulative_relative_return": 0.027985092179006354,
+          "annualized_strategy_return": 0.19927651412131775,
+          "annualized_benchmark_return": 0.13062963503210012,
+          "annualized_relative_return": 0.06071561983006846,
+          "annual_active": 0.05786000186997011,
+          "tracking_error": 0.027660859518935942,
+          "information_ratio": 2.091764423674564,
+          "strategy_max_drawdown": -0.07349962696919687,
+          "benchmark_max_drawdown": -0.0844962087824227,
+          "relative_max_drawdown": -0.011923815607597255,
+          "annual_active_95pct": [
+            -0.018034381516742696,
+            0.14249963093968454
+          ],
+          "mean_one_way_turnover": 0.012108882871182322,
+          "cost_cny": 39351.98361967016,
+          "cost_daily_nav_bps": 0.20592308188876055,
+          "cumulative_cost_nav_bps": 24.298923662873744,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 701,
+          "capacity_cut_value_daily_nav_bps": 0.6583406830637779,
+          "blocked_value_daily_nav_bps": 48.54906279921043,
+          "cash_cut_value_daily_nav_bps": 47.32681788663904
+        },
+        "double_fees": {
+          "strategy_cumulative_return": 0.08644106505030646,
+          "benchmark_cumulative_return": 0.059174392413033905,
+          "cumulative_return_difference": 0.02726667263727256,
+          "cumulative_relative_return": 0.025743326908756803,
+          "annualized_strategy_return": 0.1936981976098422,
+          "annualized_benchmark_return": 0.13062963503210012,
+          "annualized_relative_return": 0.05578180566260471,
+          "annual_active": 0.05304405880188583,
+          "tracking_error": 0.028813898913061478,
+          "information_ratio": 1.84091916758411,
+          "strategy_max_drawdown": -0.0718806754443948,
+          "benchmark_max_drawdown": -0.0844962087824227,
+          "relative_max_drawdown": -0.013016176330171492,
+          "annual_active_95pct": [
+            -0.025339481105214477,
+            0.13964670167344997
+          ],
+          "mean_one_way_turnover": 0.012858068935013539,
+          "cost_cny": 84581.31568906923,
+          "cost_daily_nav_bps": 0.43748058019659786,
+          "cumulative_cost_nav_bps": 51.62270846319855,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 701,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 48.09666018380032,
+          "cash_cut_value_daily_nav_bps": 46.88587378332739
+        },
+        "capacity": {
+          "strategy_cumulative_return": 0.08996188858352916,
+          "benchmark_cumulative_return": 0.059174392413033905,
+          "cumulative_return_difference": 0.030787496170495254,
+          "cumulative_relative_return": 0.0290674476186632,
+          "annualized_strategy_return": 0.20197475375861718,
+          "annualized_benchmark_return": 0.13062963503210012,
+          "annualized_relative_return": 0.06310211276612399,
+          "annual_active": 0.059973702850722926,
+          "tracking_error": 0.02881935329876502,
+          "information_ratio": 2.0810218129805484,
+          "strategy_max_drawdown": -0.07124940589901052,
+          "benchmark_max_drawdown": -0.0844962087824227,
+          "relative_max_drawdown": -0.012825113520119502,
+          "annual_active_95pct": [
+            -0.020898577976464265,
+            0.15379930590657767
+          ],
+          "mean_one_way_turnover": 0.0125835789541645,
+          "cost_cny": 1268598.4332942462,
+          "cost_daily_nav_bps": 0.213995740730052,
+          "cumulative_cost_nav_bps": 25.251497406146136,
+          "writeoff_cny": 0.0,
+          "max_stale_closes": 701,
+          "capacity_cut_value_daily_nav_bps": 6.283992461448045e-15,
+          "blocked_value_daily_nav_bps": 16.727803554580817,
+          "cash_cut_value_daily_nav_bps": 15.622904996589336
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.06178451797491633,
+          "annual_active_difference_95pct": [
+            -0.01511212804059164,
+            0.14714896359640606
+          ],
+          "cumulative_relative_return": 0.029920084516517065
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.000687649687493264,
+          "annual_active_difference_95pct": [
+            -0.007598269864321154,
+            0.013353850272727955
+          ],
+          "cumulative_relative_return": 0.0003912223479587418
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.005503592755578491,
+          "annual_active_difference_95pct": [
+            -0.005907180884807498,
+            -0.004783371118853814
+          ],
+          "cumulative_relative_return": -0.0025709536737843486
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": 0.0014260512932593148,
+          "annual_active_difference_95pct": [
+            -0.0027341202071575073,
+            0.010334457233594522
+          ],
+          "cumulative_relative_return": 0.0006614091040924031
+        }
+      }
+    },
+    "2023H2": {
+      "opening_close": "2023-06-30",
+      "first_trade": "2023-07-03",
+      "last_trade": "2023-12-29",
+      "days": 124,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": -0.07045282028221733,
+          "benchmark_cumulative_return": -0.10575790162119114,
+          "cumulative_return_difference": 0.03530508133897381,
+          "cumulative_relative_return": 0.039480450990821314,
+          "annualized_strategy_return": -0.1379759688667257,
+          "annualized_benchmark_return": -0.2032092960697699,
+          "annualized_relative_return": 0.08187009070421603,
+          "annual_active": 0.0769029761684945,
+          "tracking_error": 0.02462504495636338,
+          "information_ratio": 3.1229577978342706,
+          "strategy_max_drawdown": -0.12847508705259925,
+          "benchmark_max_drawdown": -0.1486682917881098,
+          "relative_max_drawdown": -0.011178307332374349,
+          "annual_active_95pct": [
+            0.0013359225863866996,
+            0.13207227476988204
+          ],
+          "mean_one_way_turnover": 0.008660737806526366,
+          "cost_cny": 29488.148607909898,
+          "cost_daily_nav_bps": 0.14728409214319832,
+          "cumulative_cost_nav_bps": 18.263227425756593,
+          "writeoff_cny": 8934.546990063965,
+          "max_stale_closes": 825,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 38.708751440489934,
+          "cash_cut_value_daily_nav_bps": 38.875735369869815
+        },
+        "passive": {
+          "strategy_cumulative_return": -0.10726013549650004,
+          "benchmark_cumulative_return": -0.10575790162119114,
+          "cumulative_return_difference": -0.0015022338753089004,
+          "cumulative_relative_return": -0.0016798961690936975,
+          "annualized_strategy_return": -0.20592716710491477,
+          "annualized_benchmark_return": -0.2032092960697699,
+          "annualized_relative_return": -0.0034110225203917155,
+          "annual_active": -0.003398121421942309,
+          "tracking_error": 0.0025217184125806,
+          "information_ratio": -1.3475419797029764,
+          "strategy_max_drawdown": -0.1494162163460051,
+          "benchmark_max_drawdown": -0.1486682917881098,
+          "relative_max_drawdown": -0.0030423582552747686,
+          "annual_active_95pct": [
+            -0.011561031981113405,
+            0.0042857663237016235
+          ],
+          "mean_one_way_turnover": 0.00864784248196934,
+          "cost_cny": 21573.078566347252,
+          "cost_daily_nav_bps": 0.14706479487168395,
+          "cumulative_cost_nav_bps": 18.236034564088808,
+          "writeoff_cny": 8306.013463864667,
+          "max_stale_closes": 825,
+          "capacity_cut_value_daily_nav_bps": 3.204778112053087,
+          "blocked_value_daily_nav_bps": 52.13735153484722,
+          "cash_cut_value_daily_nav_bps": 55.167607523743946
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": -0.07308979201689181,
+          "benchmark_cumulative_return": -0.10575790162119114,
+          "cumulative_return_difference": 0.032668109604299334,
+          "cumulative_relative_return": 0.03653161673278871,
+          "annualized_strategy_return": -0.142938416503106,
+          "annualized_benchmark_return": -0.2032092960697699,
+          "annualized_relative_return": 0.07564204661195628,
+          "annual_active": 0.07129246122859238,
+          "tracking_error": 0.023029057551927485,
+          "information_ratio": 3.095761129947993,
+          "strategy_max_drawdown": -0.12963111682183637,
+          "benchmark_max_drawdown": -0.1486682917881098,
+          "relative_max_drawdown": -0.010025777554470983,
+          "annual_active_95pct": [
+            0.0007056505448793956,
+            0.11847820852549173
+          ],
+          "mean_one_way_turnover": 0.00808801128012966,
+          "cost_cny": 26418.63805458994,
+          "cost_daily_nav_bps": 0.13754433227850169,
+          "cumulative_cost_nav_bps": 17.05549720253421,
+          "writeoff_cny": 10072.31300018238,
+          "max_stale_closes": 825,
+          "capacity_cut_value_daily_nav_bps": 2.9943608325775255,
+          "blocked_value_daily_nav_bps": 42.09953882066144,
+          "cash_cut_value_daily_nav_bps": 45.221367663705635
+        },
+        "double_fees": {
+          "strategy_cumulative_return": -0.07214952387140694,
+          "benchmark_cumulative_return": -0.10575790162119114,
+          "cumulative_return_difference": 0.0336083777497842,
+          "cumulative_relative_return": 0.03758308606887728,
+          "annualized_strategy_return": -0.14117062000978442,
+          "annualized_benchmark_return": -0.2032092960697699,
+          "annualized_relative_return": 0.07786069259339379,
+          "annual_active": 0.07319339732377465,
+          "tracking_error": 0.024617821047547457,
+          "information_ratio": 2.9731874800132454,
+          "strategy_max_drawdown": -0.12918379531186874,
+          "benchmark_max_drawdown": -0.1486682917881098,
+          "relative_max_drawdown": -0.011570802977435735,
+          "annual_active_95pct": [
+            -0.001944485168033454,
+            0.1285201012250989
+          ],
+          "mean_one_way_turnover": 0.008654653789614521,
+          "cost_cny": 57277.381726832515,
+          "cost_daily_nav_bps": 0.29446435389461983,
+          "cumulative_cost_nav_bps": 36.51357988293286,
+          "writeoff_cny": 8694.262538799921,
+          "max_stale_closes": 825,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 38.866114120023184,
+          "cash_cut_value_daily_nav_bps": 39.18055745374903
+        },
+        "capacity": {
+          "strategy_cumulative_return": -0.07003938149429834,
+          "benchmark_cumulative_return": -0.10575790162119114,
+          "cumulative_return_difference": 0.035718520126892805,
+          "cumulative_relative_return": 0.03994278528336759,
+          "annualized_strategy_return": -0.13719660961365554,
+          "annualized_benchmark_return": -0.2032092960697699,
+          "annualized_relative_return": 0.08284821362812345,
+          "annual_active": 0.07782850428291915,
+          "tracking_error": 0.024414125288813482,
+          "information_ratio": 3.187847336827589,
+          "strategy_max_drawdown": -0.12848033763293198,
+          "benchmark_max_drawdown": -0.1486682917881098,
+          "relative_max_drawdown": -0.011288629527525296,
+          "annual_active_95pct": [
+            0.0011320737310023044,
+            0.13248646354898044
+          ],
+          "mean_one_way_turnover": 0.008658298272094859,
+          "cost_cny": 878975.8546595478,
+          "cost_daily_nav_bps": 0.14724260553755078,
+          "cumulative_cost_nav_bps": 18.258083086656296,
+          "writeoff_cny": 288996.70518547046,
+          "max_stale_closes": 825,
+          "capacity_cut_value_daily_nav_bps": 5.3367124099373134e-15,
+          "blocked_value_daily_nav_bps": 17.827505766723817,
+          "cash_cut_value_daily_nav_bps": 17.958148450879786
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.08030109759043408,
+          "annual_active_difference_95pct": [
+            0.005968425591333846,
+            0.13249098100606493
+          ],
+          "cumulative_relative_return": 0.04122960862149161
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.005610514939900534,
+          "annual_active_difference_95pct": [
+            -0.0016107059185927195,
+            0.01505172015503055
+          ],
+          "cumulative_relative_return": 0.0028449052691008614
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.0037095788447171277,
+          "annual_active_difference_95pct": [
+            -0.0043743938528879285,
+            -0.003124903818415543
+          ],
+          "cumulative_relative_return": -0.00182530120709401
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": 0.0009255281144271575,
+          "annual_active_difference_95pct": [
+            -0.001739717323539441,
+            0.0016200265669565803
+          ],
+          "cumulative_relative_return": 0.00044477439869639035
+        }
+      }
+    },
+    "2024H1": {
+      "opening_close": "2023-12-29",
+      "first_trade": "2024-01-02",
+      "last_trade": "2024-06-28",
+      "days": 117,
+      "accounts": {
+        "nominal": {
+          "strategy_cumulative_return": -0.12999356299835252,
+          "benchmark_cumulative_return": -0.15989208246447573,
+          "cumulative_return_difference": 0.029898519466123208,
+          "cumulative_relative_return": 0.035588903332599564,
+          "annualized_strategy_return": -0.2591322407566442,
+          "annualized_benchmark_return": -0.3128850495793345,
+          "annualized_relative_return": 0.07822971802575673,
+          "annual_active": 0.07138144722057851,
+          "tracking_error": 0.02981096694027091,
+          "information_ratio": 2.3944693697322195,
+          "strategy_max_drawdown": -0.2573312829671285,
+          "benchmark_max_drawdown": -0.27076248727754704,
+          "relative_max_drawdown": -0.017040843419037777,
+          "annual_active_95pct": [
+            -0.03825676284850423,
+            0.15489138455901696
+          ],
+          "mean_one_way_turnover": 0.007851341882205286,
+          "cost_cny": 22598.489253500626,
+          "cost_daily_nav_bps": 0.13351929189844833,
+          "cumulative_cost_nav_bps": 15.621757152118455,
+          "writeoff_cny": 1374.3593532982795,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 23.250260741683217,
+          "cash_cut_value_daily_nav_bps": 18.432522458529714
+        },
+        "passive": {
+          "strategy_cumulative_return": -0.16399909918766287,
+          "benchmark_cumulative_return": -0.15989208246447573,
+          "cumulative_return_difference": -0.00410701672318714,
+          "cumulative_relative_return": -0.0048886775585155196,
+          "annualized_strategy_return": -0.32009959826004175,
+          "annualized_benchmark_return": -0.3128850495793345,
+          "annualized_relative_return": -0.010499769618300903,
+          "annual_active": -0.010337322693307996,
+          "tracking_error": 0.004406047028422779,
+          "information_ratio": -2.346167125912049,
+          "strategy_max_drawdown": -0.2721924132811835,
+          "benchmark_max_drawdown": -0.27076248727754704,
+          "relative_max_drawdown": -0.005247430418676258,
+          "annual_active_95pct": [
+            -0.019836983543876842,
+            -0.0003974077158259717
+          ],
+          "mean_one_way_turnover": 0.010651800940877384,
+          "cost_cny": 21647.257510842606,
+          "cost_daily_nav_bps": 0.18114401640065575,
+          "cumulative_cost_nav_bps": 21.193849918876722,
+          "writeoff_cny": 3960.9205952224675,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 3.30857514728362,
+          "blocked_value_daily_nav_bps": 37.45768663101481,
+          "cash_cut_value_daily_nav_bps": 38.94388644120019
+        },
+        "sector_cost": {
+          "strategy_cumulative_return": -0.1337747653668595,
+          "benchmark_cumulative_return": -0.15989208246447573,
+          "cumulative_return_difference": 0.02611731709761622,
+          "cumulative_relative_return": 0.031088050180781535,
+          "annualized_strategy_return": -0.26605011641623766,
+          "annualized_benchmark_return": -0.3128850495793345,
+          "annualized_relative_return": 0.06816171462202014,
+          "annual_active": 0.06236228585160828,
+          "tracking_error": 0.027600567604528305,
+          "information_ratio": 2.259456643977741,
+          "strategy_max_drawdown": -0.2579015998963685,
+          "benchmark_max_drawdown": -0.27076248727754704,
+          "relative_max_drawdown": -0.016012794380158346,
+          "annual_active_95pct": [
+            -0.036726755745072344,
+            0.1371991816031984
+          ],
+          "mean_one_way_turnover": 0.007597084426484235,
+          "cost_cny": 20927.93036094423,
+          "cost_daily_nav_bps": 0.12919554666019836,
+          "cumulative_cost_nav_bps": 15.11587895924321,
+          "writeoff_cny": 1491.220299570506,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 1.4936597535534957,
+          "blocked_value_daily_nav_bps": 26.321483796905387,
+          "cash_cut_value_daily_nav_bps": 22.960569012662447
+        },
+        "double_fees": {
+          "strategy_cumulative_return": -0.1313540558985069,
+          "benchmark_cumulative_return": -0.15989208246447573,
+          "cumulative_return_difference": 0.02853802656596882,
+          "cumulative_relative_return": 0.03396947698063091,
+          "annualized_strategy_return": -0.26162532660075255,
+          "annualized_benchmark_return": -0.3128850495793345,
+          "annualized_relative_return": 0.07460137921202215,
+          "annual_active": 0.06801256641021285,
+          "tracking_error": 0.029846949771677504,
+          "information_ratio": 2.278710787215906,
+          "strategy_max_drawdown": -0.2575163320679804,
+          "benchmark_max_drawdown": -0.27076248727754704,
+          "relative_max_drawdown": -0.017308049292712457,
+          "annual_active_95pct": [
+            -0.04088022828867978,
+            0.15176125805358798
+          ],
+          "mean_one_way_turnover": 0.007845163370965311,
+          "cost_cny": 43816.15732015568,
+          "cost_daily_nav_bps": 0.2669219123709036,
+          "cumulative_cost_nav_bps": 31.229863747395722,
+          "writeoff_cny": 1334.4993725878833,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 0.0,
+          "blocked_value_daily_nav_bps": 23.33575903762815,
+          "cash_cut_value_daily_nav_bps": 18.64230581439182
+        },
+        "capacity": {
+          "strategy_cumulative_return": -0.13182527996556914,
+          "benchmark_cumulative_return": -0.15989208246447573,
+          "cumulative_return_difference": 0.028066802498906585,
+          "cumulative_relative_return": 0.03340856801021608,
+          "annualized_strategy_return": -0.26248778905775694,
+          "annualized_benchmark_return": -0.3128850495793345,
+          "annualized_relative_return": 0.07334618536639814,
+          "annual_active": 0.0672036383901614,
+          "tracking_error": 0.028792609709314944,
+          "information_ratio": 2.334058602837233,
+          "strategy_max_drawdown": -0.2588021120470534,
+          "benchmark_max_drawdown": -0.27076248727754704,
+          "relative_max_drawdown": -0.01581205564087229,
+          "annual_active_95pct": [
+            -0.03585367623335214,
+            0.14726163588345917
+          ],
+          "mean_one_way_turnover": 0.007864768583816741,
+          "cost_cny": 673088.2919595472,
+          "cost_daily_nav_bps": 0.13374789322217434,
+          "cumulative_cost_nav_bps": 15.648503506994398,
+          "writeoff_cny": 18401.10477046596,
+          "max_stale_closes": 942,
+          "capacity_cut_value_daily_nav_bps": 2.5974712037870165e-15,
+          "blocked_value_daily_nav_bps": 14.78612850322082,
+          "cash_cut_value_daily_nav_bps": 13.52516914514184
+        }
+      },
+      "comparisons": {
+        "nominal_vs_passive": {
+          "annual_active_difference": 0.08171876991388435,
+          "annual_active_difference_95pct": [
+            -0.03475961345191963,
+            0.1661741504816245
+          ],
+          "cumulative_relative_return": 0.04067643486540207
+        },
+        "nominal_vs_sector_cost": {
+          "annual_active_difference": 0.009019161368973832,
+          "annual_active_difference_95pct": [
+            -0.0008318256052934211,
+            0.018507759559532756
+          ],
+          "cumulative_relative_return": 0.004365149175212357
+        },
+        "double_fees_vs_nominal": {
+          "annual_active_difference": -0.0033688808103639997,
+          "annual_active_difference_95pct": [
+            -0.003962253480267972,
+            -0.0026625188372369946
+          ],
+          "cumulative_relative_return": -0.001563773372577737
+        },
+        "capacity_vs_nominal": {
+          "annual_active_difference": -0.004177808830419747,
+          "annual_active_difference_95pct": [
+            -0.009485006139540578,
+            0.0026567916531839704
+          ],
+          "cumulative_relative_return": -0.0021054062238083926
+        }
+      }
+    }
+  }
+}

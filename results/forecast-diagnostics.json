@@ -1,0 +1,139 @@
+{
+  "schema_version": 2,
+  "universe": "csi1000",
+  "horizon_sessions": 5,
+  "minimum_paired_weight": 0.95,
+  "definitions": {
+    "periods": "Each period uses active decisions whose next open and label-ending open are both inside that period. Labels spanning the IS and OS boundary enter the full-window metrics.",
+    "label": "The adjusted-open return from the next open through the open five sessions later, less the contemporaneous return of the observable decision-weighted constituents. Unquoted stocks retain missing labels.",
+    "sample": "Pair finite forecasts and labels on positive-weight constituents, covering at least the minimum paired weight with five or more stocks and cross-sectional variation in both series.",
+    "aggregation": "Each cross-section weights its paired stocks equally and each eligible date contributes equally to period means. Pearson IC uses raw values. Rank IC uses average ranks for ties.",
+    "calibration": "Each daily slope regresses realized active return on the original predicted active return with an intercept. The slope is dimensionless.",
+    "quintiles": "Sort paired stocks by prediction with ties in the saved column order, split into five groups differing in size by at most one, then average the daily group means. Basis points are raw five-day return differences before fees."
+  },
+  "periods": {
+    "full": {
+      "first_entry_session": "2019-07-01",
+      "last_entry_session": "2024-06-28",
+      "active_decisions": 1146,
+      "mature_decisions": 1141,
+      "ic_days": 1141,
+      "first_evaluated_decision": "2019-10-09",
+      "last_evaluated_decision": "2024-06-20",
+      "mean_pearson_ic": 0.041326108502077734,
+      "mean_rank_ic": 0.06067695076869592,
+      "mean_calibration_raw_slope": 2.7200641373115553,
+      "q5_minus_q1_forecast_bps": 23.821552785660224,
+      "q5_minus_q1_realized_bps": 59.650406302936425,
+      "quintiles": [
+        {
+          "quintile": 1,
+          "mean_forecast_bps": -12.711798163668469,
+          "mean_realized_bps": -37.55909285255191
+        },
+        {
+          "quintile": 2,
+          "mean_forecast_bps": -3.9424136806306054,
+          "mean_realized_bps": 2.7824773686786837
+        },
+        {
+          "quintile": 3,
+          "mean_forecast_bps": 0.6458029856959702,
+          "mean_realized_bps": 12.207713561888978
+        },
+        {
+          "quintile": 4,
+          "mean_forecast_bps": 4.8988441498715565,
+          "mean_realized_bps": 20.776338112545023
+        },
+        {
+          "quintile": 5,
+          "mean_forecast_bps": 11.109754621991755,
+          "mean_realized_bps": 22.09131345038451
+        }
+      ]
+    },
+    "is": {
+      "first_entry_session": "2019-07-01",
+      "last_entry_session": "2023-06-30",
+      "active_decisions": 905,
+      "mature_decisions": 900,
+      "ic_days": 900,
+      "first_evaluated_decision": "2019-10-09",
+      "last_evaluated_decision": "2023-06-20",
+      "mean_pearson_ic": 0.04018253575531257,
+      "mean_rank_ic": 0.06086013116475162,
+      "mean_calibration_raw_slope": 2.6067916861229494,
+      "q5_minus_q1_forecast_bps": 25.13653831124278,
+      "q5_minus_q1_realized_bps": 63.15695593050576,
+      "quintiles": [
+        {
+          "quintile": 1,
+          "mean_forecast_bps": -13.27915348001191,
+          "mean_realized_bps": -37.783550379746806
+        },
+        {
+          "quintile": 2,
+          "mean_forecast_bps": -4.316764602736591,
+          "mean_realized_bps": 0.43545553236340817
+        },
+        {
+          "quintile": 3,
+          "mean_forecast_bps": 0.5762288188367061,
+          "mean_realized_bps": 11.257444263050305
+        },
+        {
+          "quintile": 4,
+          "mean_forecast_bps": 5.162545202002993,
+          "mean_realized_bps": 21.79124006003372
+        },
+        {
+          "quintile": 5,
+          "mean_forecast_bps": 11.857384831230872,
+          "mean_realized_bps": 25.373405550758957
+        }
+      ]
+    },
+    "os": {
+      "first_entry_session": "2023-07-03",
+      "last_entry_session": "2024-06-28",
+      "active_decisions": 241,
+      "mature_decisions": 236,
+      "ic_days": 236,
+      "first_evaluated_decision": "2023-06-30",
+      "last_evaluated_decision": "2024-06-20",
+      "mean_pearson_ic": 0.04392661329568795,
+      "mean_rank_ic": 0.05849564815452235,
+      "mean_calibration_raw_slope": 3.061451687424626,
+      "q5_minus_q1_forecast_bps": 18.8114280921861,
+      "q5_minus_q1_realized_bps": 44.10168372665685,
+      "quintiles": [
+        {
+          "quintile": 1,
+          "mean_forecast_bps": -10.539111353655795,
+          "mean_realized_bps": -36.22473683970075
+        },
+        {
+          "quintile": 2,
+          "mean_forecast_bps": -2.5261483690728346,
+          "mean_realized_bps": 11.348493461146168
+        },
+        {
+          "quintile": 3,
+          "mean_forecast_bps": 0.9004100268996695,
+          "mean_realized_bps": 14.669724413260514
+        },
+        {
+          "quintile": 4,
+          "mean_forecast_bps": 3.8925329501429062,
+          "mean_realized_bps": 15.920573640442827
+        },
+        {
+          "quintile": 5,
+          "mean_forecast_bps": 8.272316738530304,
+          "mean_realized_bps": 7.8769468869561035
+        }
+      ]
+    }
+  }
+}
